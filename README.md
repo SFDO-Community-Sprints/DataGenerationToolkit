@@ -32,7 +32,8 @@ Team from the Philadelphia Sprint focused on building a tool to generate test da
 * YML file to specify what the data shape is
 
 ### Schema of YML File
-* Define parameters for various data generators
+* Define parameters for various data generators/factories
+* what are the different components of the parameters that will define the factories
 * Define data sources
     records in SF org
     CSV file
