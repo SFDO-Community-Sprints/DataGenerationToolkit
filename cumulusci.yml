@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.0.0'
+project:
+    name: DataGenerationTool
+    package:
+        name:  DataGenerationTool
+        api_version: '46.0'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/DataGenerationTool/tests
+            options:
+                outputdir: robot/DataGenerationTool/results
+
+    robot_testdoc:
+        options:
+            path: robot/DataGenerationTool/tests
+            output: robot/DataGenerationTool/doc/DataGenerationTool_tests.html
+
+flows:
+    config_qa:
+        1.1:
+            task: deploy_qa_config
