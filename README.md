@@ -4,7 +4,7 @@ Team from the Philadelphia Sprint focused on building a tool to generate test da
 ### Project Team
 * Team Leader(s): Aaron Crosman
 * GitHub Scribe: Kim Snipes
-* List of all Contributors: Andrew Curran, Francisco Borges, Fathma _____, Jason Lantz, David Reed
+* List of all Contributors: Andrew Curran, Francisco Borges, Fatama Ahmed, Jason Lantz, David Reed
 
 
 ### Project Vision/Goals
