@@ -1,3 +1,6 @@
+
+![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
+
 # DataGenerationTool
 Team from the Philadelphia Sprint focused on building a tool to generate test data.
 

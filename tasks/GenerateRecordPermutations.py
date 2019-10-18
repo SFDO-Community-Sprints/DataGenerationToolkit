@@ -1,16 +1,30 @@
-from cumulusci.tasks.bulkdata import LoadData
+from cumulusci.tasks.salesforce import BaseSalesforceApiTask
+from cumulusci.core.utils import process_list_arg
 import csv
 
-class GenerateRecordPermutations(LoadData):
-    task_options = {}
-    def _run_task(self):
-        # This demonstration supports only one object
-        self.mapping_objects = ["Account"]
+class GenerateRecordPermutations(BaseSalesforceApiTask):
+    task_docs = """
+        Create sample data for an org.
+        """
+    task_options = {
+        "objects": {
+            "description": "A comma seperated list of sObject types to generate.",
+            "required": True,
+        },
+    }
 
-        # Gather permutable fields for this object
+    def _init_options(self, kwargs):
+        super()._init_options(kwargs)
+        self.options['objects'] = process_list_arg(self.options.get('objects'))
+
+    def _run_task(self):
+
+        # This demonstration supports only one object at a time, but accepts lists.
+        # Gather permutable fields for the object
         # Picklists, checkboxes, and Record Type (if present)
-        object_name = self.mapping_objects[0]
-        field_list = { field["name"]: field for field in getattr(self.sf, object_name).describe()["fields"]}
+        object_name = self.options['objects'][0]
+        object_details = getattr(self.sf, object_name).describe()
+        field_list = {field["name"]: field for field in object_details["fields"]}
         permutable_values = {}
         for name, f in field_list.items():
             if name == "RecordTypeId":
@@ -32,13 +46,13 @@ class GenerateRecordPermutations(LoadData):
 
         populate_name = field_list["Name"]["updateable"]
 
-        def generate_random_name():
+        def generate_random_name(object_name):
             i = 0
             while True:
                 i = i + 1
-                yield f"Account {i}"             
+                yield f"{object_name} {i}"
 
-        def generate_permutations(perms, template=None, populate_name=False, name_generator=generate_random_name()):
+        def generate_permutations(perms, template=None, populate_name=False, name_generator=generate_random_name(object_name)):
             if template is None:
                 template = {}
 
@@ -54,8 +68,9 @@ class GenerateRecordPermutations(LoadData):
                         template["Name"] = next(name_generator)
 
                     yield template
+        file_name = object_details['labelPlural']
 
-        with open("Accounts.csv", mode="w") as output_file:
+        with open(f"{file_name}.csv", mode="w") as output_file:
             field_names = list(permutable_values.keys())
             field_names.append("Name")
             writer = csv.DictWriter(output_file, field_names)
@@ -67,7 +82,7 @@ class GenerateRecordPermutations(LoadData):
             object_name, contentType="CSV"
         )
 
-        with open("Accounts.csv", mode="rb") as input_file:
+        with open(f"{file_name}.csv", mode="rb") as input_file:
             batch_id = self.bulk.post_batch(job_id, input_file)
 
         self.bulk.close_job(job_id)
