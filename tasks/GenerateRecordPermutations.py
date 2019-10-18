@@ -1,19 +1,32 @@
 from cumulusci.tasks.salesforce import BaseSalesforceApiTask
+from cumulusci.core.utils import process_list_arg
 import csv
 
 class GenerateRecordPermutations(BaseSalesforceApiTask):
+    task_docs = """
+        Create sample data for an org.
+        """
+    task_options = {
+        "sobjects": {
+            "description": "A comma seperated list of sObject types to generate.",
+            "required": True,
+        },
+    }
+
+    def _init_options(self, kwargs):
+        super()._init_options(kwargs)
+        self.options['sobjects'] = process_list_arg(self.options.get('sobjects'))
+
     def _run_task(self):
 #        super()._run_task()
 
         # We now have a mapping in place and an sObject network
         # stored in our instance variables.
 
-        # This demonstration supports only one object
-        self.mapping_objects = ["Account"]
-
-        # Gather permutable fields for this object
+        # This demonstration supports only one object at a time, but accepts lists.
+        # Gather permutable fields for the object
         # Picklists, checkboxes, and Record Type (if present)
-        object_name = self.mapping_objects[0]
+        object_name = self.options['sobjects'][0]
         field_list = { field["name"]: field for field in getattr(self.sf, object_name).describe()["fields"]}
         permutable_values = {}
         for name, f in field_list.items():
@@ -40,7 +53,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
             i = 0
             while True:
                 i = i + 1
-                yield f"Account {i}"             
+                yield f"Account {i}"
 
         def generate_permutations(perms, template=None, populate_name=False, name_generator=generate_random_name()):
             if template is None:
@@ -66,5 +79,3 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
             writer.writeheader()
             for row in generate_permutations(permutable_values, template=None, populate_name=populate_name):
                 writer.writerow(row)
-
-            
