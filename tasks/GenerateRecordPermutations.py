@@ -49,13 +49,13 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
 
         populate_name = field_list["Name"]["updateable"]
 
-        def generate_random_name():
+        def generate_random_name(object_name):
             i = 0
             while True:
                 i = i + 1
-                yield f"Account {i}"
+                yield f"{object_name} {i}"
 
-        def generate_permutations(perms, template=None, populate_name=False, name_generator=generate_random_name()):
+        def generate_permutations(perms, template=None, populate_name=False, name_generator=generate_random_name(object_name)):
             if template is None:
                 template = {}
 
@@ -72,7 +72,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
 
                     yield template
 
-        with open("Accounts.csv", mode="w") as output_file:
+        with open(f"{object_name}.csv", mode="w") as output_file:
             field_names = list(permutable_values.keys())
             field_names.append("Name")
             writer = csv.DictWriter(output_file, field_names)
