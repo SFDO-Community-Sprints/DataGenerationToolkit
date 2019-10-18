@@ -7,6 +7,8 @@ project:
     source_format: sfdx
 
 tasks:
+    generate_data:
+        class_path: tasks.GenerateRecordPermutations.GenerateRecordPermutations
     robot:
         options:
             suites: robot/DataGenerationTool/tests
