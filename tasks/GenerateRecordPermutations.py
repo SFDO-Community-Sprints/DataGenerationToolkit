@@ -1,8 +1,9 @@
 from cumulusci.tasks.salesforce import BaseSalesforceApiTask
+from cumulusci.tasks.bulkdata.utils import BulkJobTaskMixin
 from cumulusci.core.utils import process_list_arg
 import csv
 
-class GenerateRecordPermutations(BaseSalesforceApiTask):
+class GenerateRecordPermutations(BaseSalesforceApiTask, BulkJobTaskMixin):
     task_docs = """
         Create sample data for an org.
         """
@@ -18,7 +19,6 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
         self.options['objects'] = process_list_arg(self.options.get('objects'))
 
     def _run_task(self):
-
         # This demonstration supports only one object at a time, but accepts lists.
         # Gather permutable fields for the object
         # Picklists, checkboxes, and Record Type (if present)
@@ -31,7 +31,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
                 # Query Record Types and add their Ids are permutable values
                 rt_ids = { rt["Id"] for rt in self.sf.query(
                     "SELECT Id FROM RecordType WHERE SobjectType = '{}'".format(
-                        self.mapping_objects[0]
+                        object_name
                     )
                 )["records"]}
                 permutable_values["RecordTypeId"] = rt_ids
