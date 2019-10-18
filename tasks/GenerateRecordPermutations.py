@@ -46,18 +46,18 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
             if template is None:
                 template = {}
 
-            for f, values in perms.items():
-                for v in values:
-                    template[f] = v
-                    next_perms = perms.copy()
-                    del next_perms[f]
-                    if next_perms:
-                        yield from generate_permutations(next_perms, template, populate_name, name_generator=name_generator)
-                    else:
-                        if populate_name:
-                            template["Name"] = next(name_generator)
+            f = list(perms.keys())[0]
+            for v in perms[f]:
+                template[f] = v
+                next_perms = perms.copy()
+                del next_perms[f]
+                if next_perms:
+                    yield from generate_permutations(next_perms, template, populate_name, name_generator=name_generator)
+                else:
+                    if populate_name:
+                        template["Name"] = next(name_generator)
 
-                        yield template
+                    yield template
 
         with open("Accounts.csv", mode="w") as output_file:
             field_names = list(permutable_values.keys())
