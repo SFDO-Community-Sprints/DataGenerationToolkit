@@ -1,13 +1,9 @@
-from cumulusci.tasks.salesforce import BaseSalesforceApiTask
+from cumulusci.tasks.bulkdata import LoadData
 import csv
 
-class GenerateRecordPermutations(BaseSalesforceApiTask):
+class GenerateRecordPermutations(LoadData):
+    task_options = {}
     def _run_task(self):
-#        super()._run_task()
-
-        # We now have a mapping in place and an sObject network
-        # stored in our instance variables.
-
         # This demonstration supports only one object
         self.mapping_objects = ["Account"]
 
@@ -67,4 +63,16 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
             for row in generate_permutations(permutable_values, template=None, populate_name=populate_name):
                 writer.writerow(row)
 
-            
+        job_id = self.bulk.create_insert_job(
+            object_name, contentType="CSV"
+        )
+
+        with open("Accounts.csv", mode="rb") as input_file:
+            batch_id = self.bulk.post_batch(job_id, input_file)
+
+        self.bulk.close_job(job_id)
+        result = self._wait_for_job(job_id)
+        if result != "Completed":
+            raise BulkDataException(
+                "Job {} did not complete successfully".format(name)
+            )
