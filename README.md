@@ -1,7 +1,9 @@
 
 ![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
 
-# DataGenerationTool
+_HUGE props to Cisco for the logo!!!!_
+
+# Data Generation Tool
 Team from the Philadelphia Sprint focused on building a tool to generate test data.
 
 Major use cases could include:
@@ -55,5 +57,6 @@ Major use cases could include:
 
 ### Project Team Accomplishments
 * Created initial list of use cases as issues on this repository.
+* Drafted UI/UX for the tool in the Wiki
 
 ### Future Contributions (AKA what were you unable to finish at the Sprint)
