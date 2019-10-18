@@ -27,7 +27,8 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
         # Gather permutable fields for the object
         # Picklists, checkboxes, and Record Type (if present)
         object_name = self.options['objects'][0]
-        field_list = { field["name"]: field for field in getattr(self.sf, object_name).describe()["fields"]}
+        object_details = getattr(self.sf, object_name).describe()
+        field_list = {field["name"]: field for field in object_details["fields"]}
         permutable_values = {}
         for name, f in field_list.items():
             if name == "RecordTypeId":
@@ -72,7 +73,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
 
                     yield template
 
-        with open(f"{object_name}.csv", mode="w") as output_file:
+        with open(f"{object_details['labelPlural']}.csv", mode="w") as output_file:
             field_names = list(permutable_values.keys())
             field_names.append("Name")
             writer = csv.DictWriter(output_file, field_names)
