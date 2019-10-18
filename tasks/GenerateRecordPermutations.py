@@ -38,20 +38,13 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
 
         def generate_random_name():
             i = 0
-            def _generator():
-                while True:
-                    i = i + 1
-                    yield f"Account {i}" 
-            
-            return _generator()
-            
+            while True:
+                i = i + 1
+                yield f"Account {i}"             
 
-        def generate_permutations(perms, template=None, populate_name=False):
+        def generate_permutations(perms, template=None, populate_name=False, name_generator=generate_random_name()):
             if template is None:
-                if populate_name:
-                    template = {"Name": generate_random_name()}
-                else:
-                    template = {}
+                template = {}
 
             for f, values in perms.items():
                 for v in values:
@@ -59,8 +52,11 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
                     next_perms = perms.copy()
                     del next_perms[f]
                     if next_perms:
-                        yield from generate_permutations(next_perms, template)
+                        yield from generate_permutations(next_perms, template, populate_name, name_generator=name_generator)
                     else:
+                        if populate_name:
+                            template["Name"] = next(name_generator)
+
                         yield template
 
         with open("Accounts.csv", mode="w") as output_file:
