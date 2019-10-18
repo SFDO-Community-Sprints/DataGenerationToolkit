@@ -1,13 +1,17 @@
-### DataGenerationTool
-Team from the Philadelphia Sprint focused on building a tool to generate test data
+# DataGenerationTool
+Team from the Philadelphia Sprint focused on building a tool to generate test data.
 
-### Project Team
+Major use cases could include:
+* Having a set of data for QA of an org that includes permutations of all, or nearly all, the types of data that are relavent to the project.
+* Generate a data set complete enough for demos, potentiatlly with the ability to add specific sets of data that could be used for story based training materials.
+* Generate a set of data at scales that allow for testing bulk data processing.
+
+## Project Team
 * Team Leader(s): Aaron Crosman
 * GitHub Scribe: Kim Snipes
 * List of all Contributors: Andrew Curran, Francisco Borges, Fatama Ahmed, Jason Lantz, David Reed
 
-
-### Project Vision/Goals
+## Project Vision/Goals
 * support QA and project demos
 * user friendly interface to generate data
 * based on actual org metadata in creation of data sets
@@ -15,9 +19,9 @@ Team from the Philadelphia Sprint focused on building a tool to generate test da
 * need the ability to define the spec of the data that is generated
 * process for how you can build test data sets that follow a story
 * specifications for what distribution of values across data model would look like
-* sketch implementation of tool 
+* sketch implementation of tool
 
-# UX Ideas
+## UX Ideas
 * tool doesnt have to be built in Salesforce
 * screen one: list of objects in your org
 * select what objects you need to generate records for
@@ -35,12 +39,10 @@ Team from the Philadelphia Sprint focused on building a tool to generate test da
 ### Schema of YML File
 * Define parameters for various data generators/factories
 * what are the different components of the parameters that will define the factories
-* Define data sources
+* Define data sources:
     records in SF org
     CSV file
-    
-    
-
+    Generated data
 
 ### Project Resources
 * seeding data into sandbox from custom schema (worked on at last spring)
@@ -48,10 +50,7 @@ Team from the Philadelphia Sprint focused on building a tool to generate test da
 * Paul's data generator
 * need to declaratively specify how data is mapped (need declarative language to describe data shape)
 
-
-
-
 ### Project Team Accomplishments
+* Created initial list of use cases as issues on this repository.
 
 ### Future Contributions (AKA what were you unable to finish at the Sprint)
-
