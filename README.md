@@ -3,13 +3,13 @@ Team from the Philadelphia Sprint focused on building a tool to generate test da
 
 Major use cases could include:
 * Having a set of data for QA of an org that includes permutations of all, or nearly all, the types of data that are relavent to the project.
-* Generate a data set complete enough for demos, potentiatlly with the ability to add specific sets of data that could be used for story based training materials.
+* Generate a data set complete enough for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
 * Generate a set of data at scales that allow for testing bulk data processing.
 
 ## Project Team
 * Team Leader(s): Aaron Crosman
 * GitHub Scribe: Kim Snipes
-* List of all Contributors: Andrew Curran, Francisco Borges, Fatama Ahmed, Jason Lantz, David Reed
+* List of all Contributors: Andrew Curran, Francisco Borges, Fatama Ahmed, Jason Lantz, David Reed, Allison Letts
 
 ## Project Vision/Goals
 * support QA and project demos
@@ -21,7 +21,8 @@ Major use cases could include:
 * specifications for what distribution of values across data model would look like
 * sketch implementation of tool
 
-## UX Ideas
+## UX Ideas 
+**See the [Wiki](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/wiki/Data-Generation-Tool-UI-Ideas) for more details**
 * tool doesnt have to be built in Salesforce
 * screen one: list of objects in your org
 * select what objects you need to generate records for
@@ -33,21 +34,20 @@ Major use cases could include:
     * confirm which org you want to send data to
 * SQL - CCI would support importing data
 * CSV - DataLoader
-
 * YML file to specify what the data shape is
 
 ### Schema of YML File
 * Define parameters for various data generators/factories
 * what are the different components of the parameters that will define the factories
 * Define data sources:
-    records in SF org
-    CSV file
-    Generated data
+    * records in SF org
+    * CSV file
+    * Generated data
 
 ### Project Resources
 * seeding data into sandbox from custom schema (worked on at last spring)
 * mapping generator CCI
-* Paul's data generator
+* Paul's data generator for LDV (internal SFDO)
 * need to declaratively specify how data is mapped (need declarative language to describe data shape)
 
 ### Project Team Accomplishments
