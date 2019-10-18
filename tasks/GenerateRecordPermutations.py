@@ -7,7 +7,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
         Create sample data for an org.
         """
     task_options = {
-        "sobjects": {
+        "objects": {
             "description": "A comma seperated list of sObject types to generate.",
             "required": True,
         },
@@ -15,7 +15,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
 
     def _init_options(self, kwargs):
         super()._init_options(kwargs)
-        self.options['sobjects'] = process_list_arg(self.options.get('sobjects'))
+        self.options['objects'] = process_list_arg(self.options.get('objects'))
 
     def _run_task(self):
 #        super()._run_task()
@@ -26,7 +26,7 @@ class GenerateRecordPermutations(BaseSalesforceApiTask):
         # This demonstration supports only one object at a time, but accepts lists.
         # Gather permutable fields for the object
         # Picklists, checkboxes, and Record Type (if present)
-        object_name = self.options['sobjects'][0]
+        object_name = self.options['objects'][0]
         field_list = { field["name"]: field for field in getattr(self.sf, object_name).describe()["fields"]}
         permutable_values = {}
         for name, f in field_list.items():
