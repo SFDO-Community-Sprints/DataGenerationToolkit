@@ -6,10 +6,16 @@ _HUGE props to Cisco for the logo!!!!_
 # Data Generation Tool
 Team from the Philadelphia Sprint focused on building a tool to generate test data.
 
+## Project Description
+This project aims to cretae a tool that will generate test data based on user-selected criteria. 
+
 Major use cases could include:
 * Having a set of data for QA of an org that includes permutations of all, or nearly all, the types of data that are relavent to the project.
 * Generate a data set complete enough for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
 * Generate a set of data at scales that allow for testing bulk data processing.
+
+## Project Audience
+Admins and consultants who need test data for QA, demos, testing etc.
 
 ## Project Team
 * Team Leader(s): Aaron Crosman
