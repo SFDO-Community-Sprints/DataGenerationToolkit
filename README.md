@@ -69,7 +69,7 @@ What did the Project Team get done during the Sprint?o include (or at least link
 * Created initial list of use cases as issues on this repository.
 * Drafted UI/UX for the tool in the Wiki
 
-## UX Ideas 
+#### UX Ideas 
 **See the [Wiki](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/wiki/Data-Generation-Tool-UI-Ideas) for more details**
 * tool doesnt have to be built in Salesforce
 * screen one: list of objects in your org
@@ -84,7 +84,7 @@ What did the Project Team get done during the Sprint?o include (or at least link
 * CSV - DataLoader
 * YML file to specify what the data shape is
 
-### Schema of YML File
+#### Schema of YML File
 * Define parameters for various data generators/factories
 * what are the different components of the parameters that will define the factories
 * Define data sources:
