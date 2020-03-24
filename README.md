@@ -23,16 +23,16 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 
 ## Past Project Team
 
-Full Name | Team Role 
------------- | ------------- 
-Aaron Crosman | Team Leader
-Kim Snipes | GitHub Scribe
-Andrew Curran | Contributor
+Full Name | Team Role | Github username
+------------ | ------------- | -------------
+Aaron Crosman | Team Leader | [acrosman](https://github.com/acrosman)
+Kim Snipes | GitHub Scribe | [kimsnipes](https://github.com/kimsnipes)
+Andrew Curran | Contributor | [andrew-curran](https://github.com/andrew-curran)
 Francisco Borges | Contributor
 Fatama Ahmed | Contributor
-Jason Lantz | Contributor
-David Reed | Contributor
-Allison Letts | Contributor
+Jason Lantz | Contributor | [jlantz](https://github.com/jlantz)
+David Reed | Contributor | [davidmreed](https://github.com/davidmreed)
+Allison Letts | Contributor | [allisonletts](https://github.com/allisonletts)
 
 ## Project Description
 This project aims to cretae a tool that will generate test data based on user-selected criteria. 
