@@ -23,7 +23,7 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 
 ## Past Project Team
 
-Full Name | Team Role | Github username
+Full Name | Team Role | Github Username
 ------------ | ------------- | -------------
 Aaron Crosman | Team Leader | [acrosman](https://github.com/acrosman)
 Kim Snipes | GitHub Scribe | [kimsnipes](https://github.com/kimsnipes)
