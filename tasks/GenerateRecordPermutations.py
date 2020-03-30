@@ -1,10 +1,11 @@
 from cumulusci.tasks.salesforce import BaseSalesforceApiTask
-from cumulusci.tasks.bulkdata.utils import BulkJobTaskMixin
+from cumulusci.tasks.bulkdata.step import BulkJobMixin
 from cumulusci.core.utils import process_list_arg
+from cumulusci.core.exceptions import BulkDataException
 import csv
 
 
-class GenerateRecordPermutations(BaseSalesforceApiTask, BulkJobTaskMixin):
+class GenerateRecordPermutations(BaseSalesforceApiTask, BulkJobMixin):
     task_docs = """
         Create sample data for an org.
         """
