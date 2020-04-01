@@ -37,7 +37,10 @@ https://powerofus.force.com/s/group/0F91E000000brOoSAI/data-generation-tool
 
 ### Current Project Team
 Help us give you the thanks you deserve and ensure future contributors know who to contact if they have questions! Please ensure that all contributing members of the team are included.
-* Team Leader(s): Aaron Crosman (Attain) & Samantha Shain (William Penn Foundation) & (???)
+* Team Leader(s):
+    * Aaron Crosman (Attain)
+    * Samantha Shain (William Penn Foundation)
+    * Cassie Supilowski (OneGoal)
 
 #### Past Project Team
 
@@ -52,13 +55,14 @@ Fatama Ahmed | Contributor
 Jason Lantz | Contributor | [jlantz](https://github.com/jlantz)
 David Reed | Contributor | [davidmreed](https://github.com/davidmreed)
 Allison Letts | Contributor | [allisonletts](https://github.com/allisonletts)
-Cassie Supilowski | Contributor |
+Cassie Supilowski | Contributor | [csupilow](https://github.com/csupilow)
 Michael Beaty | Contributor |
-Rebecca Cole Sullivan | Contributor |
+Rebecca Cole Sullivan | Contributor | [rcolesullivan](https://github.com/rcolesullivan)
 Paul Prescod | Contributor |
-Amanda Styles | Contributor |
+Amanda Styles | Contributor | [demanda](https://github.com/demanda)
 Tyler Woebkenberg | Contributor |
 Chris Chen | Contributor |
+Michael Kolodner | Contributor | [mkolodner](https://github.com/mkolodner)
 
 ### Project Resources
 * [Snowfakery](https://github.com/SFDO-Tooling/Snowfakery)
