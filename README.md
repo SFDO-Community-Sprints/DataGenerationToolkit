@@ -17,7 +17,7 @@ https://powerofus.force.com/s/group/0F91E000000brOoSAI/data-generation-tool
 
 ### Current Project Team
 Help us give you the thanks you deserve and ensure future contributors know who to contact if they have questions! Please ensure that all contributing members of the team are included.
-* Team Leader(s): 
+* Team Leader(s): Aaron Crosman (Attain) & Samantha Shain (William Penn Foundation) & (???)
 * GitHub Scribe(s): 
 * List of all Contributors:
 
@@ -33,70 +33,46 @@ Fatama Ahmed | Contributor
 Jason Lantz | Contributor | [jlantz](https://github.com/jlantz)
 David Reed | Contributor | [davidmreed](https://github.com/davidmreed)
 Allison Letts | Contributor | [allisonletts](https://github.com/allisonletts)
+Cassie Supilowski | Contributor |
+Michael Beaty | Contributor |
+Rebecca Cole Sullivan | Contributor |
+Paul Prescod | Contributor |
+Erin Schroder | Contributor |
+Amanda Styles | Contributor |
+Tyler Woebkenberg | Contributor |
+Chris Chen | Contributor|
 
 ## Project Description
-This project aims to cretae a tool that will generate test data based on user-selected criteria. 
+This project aims to create a process that will generate test data sets based on admin-selected criteria. 
 
-Major use cases could include:
-* Having a set of data for QA of an org that includes permutations of all, or nearly all, the types of data that are relavent to the project.
-* Generate a data set complete enough for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
-* Generate a set of data at scales that allow for testing bulk data processing.
+Test data are defined as valid records for a set of standard and custom Salesforce objects that represent complete stories and singficant use cases/permutations that are represent programs or personas in the org.
 
-### Project Vision
-
-Develop standardized System Admin and Business Analyst job descriptions and build alignment around them throughout the SFDO ecosystem (customers, consultants, etc). Develop models for Salesforce team structures within nonprofit organizations. Catalog resources for effective CRM leadership in nonprofits beyond what is covered within certification materials. For use by Salesforce Administrators and consultants who need test data for QA, demos, testing etc.
+Major use cases for these data sets include:
+* QA an org populated with permutations of all, or nearly all, the types of data that are relavent to the project.
+* Be able to reliably and easily load sample data into a given Salesforce org (production, sandbox or scratch).
+* Have a data set for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
+* Have a data set that ensures the privacy of people represented in the dataset (ie not real names)
+* Have data sets at scales that allow for testing bulk data processing.
 
 ## Project Vision/Goals
-* support QA and project demos
-* user friendly interface to generate data
-* based on actual org metadata in creation of data sets
-* need for medium sized data set that reflects the depth and complexity of the org schema
-* need the ability to define the spec of the data that is generated
-* process for how you can build test data sets that follow a story
-* specifications for what distribution of values across data model would look like
-* sketch implementation of tool
+* Everyone has access to an open process/tool to reliably generate sample data for telling user stories
+* Admin-friendly interface to define requirements for the data generated 
+* Data sets generated through this process could be appopriate for medium-sized orgs and can fit in a sandbox
+* Data sets generated through this process could be valid for large data valume (LDV) testing
+* Develop process for how you can build test data sets that follow a story (automated? manual? best practice doc?)
+* Prioritize leadership development/capacity building through project leadership/contributions from customers, partners, devs, etc
 
-### Project Resources (It's ok if you'd prefer to type all the things in Google docs, Quip, or your word processor of choice, just please make sure you include links to your work here in Github. We need a source of truth, and for now that's here in GitHub.)
-* seeding data into sandbox from custom schema (worked on at last spring)
-* mapping generator CCI
-* Paul's data generator for LDV (internal SFDO)
-* need to declaratively specify how data is mapped (need declarative language to describe data shape)
-
-### Current Project Team Accomplishments
-What did the Project Team get done during the Sprint?o include (or at least links to) all supporting material here. If it's not in your project Repo, it will get lost.
-
-### Project Team Accomplishments (YTD)
-* Created initial list of use cases as issues on this repository.
-* Drafted UI/UX for the tool in the Wiki
-
-#### UX Ideas 
-**See the [Wiki](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/wiki/Data-Generation-Tool-UI-Ideas) for more details**
-* tool doesnt have to be built in Salesforce
-* screen one: list of objects in your org
-* select what objects you need to generate records for
-* distribution of values across fields
-* screen two: like schema builder; checks required relationships and allows user to tell the tool how many of each record you need
-* click GENERATE button
-    * after data is generated, have the ability to select your primary object and generate a report that returns data for main object
-    * send data to SFDX to import
-    * confirm which org you want to send data to
-* SQL - CCI would support importing data
-* CSV - DataLoader
-* YML file to specify what the data shape is
-
-#### Schema of YML File
-* Define parameters for various data generators/factories
-* what are the different components of the parameters that will define the factories
-* Define data sources:
-    * records in SF org
-    * CSV file
-    * Generated data
-
-### Future Contributions (AKA what were you unable to finish at the Sprint)
-Often, it takes multiple Sprints to contribute an idea back into the Community. What happens at a Sprint does not stay at a Sprint! If someone were to contribute to this project at the next Sprint what would you want them to work on to move this project forward?<br>
-
-* What types of team roles does this project require? This gives you a way to tell future volunteers what kinds of tasks you need help with to complete this project. For example: Do you need a developer, documentation writer, qa tester, thought-leader, general volunteers, etc.
-
-* What is your project's Roadmap?
-
-**Important**: If you have specific asks to help move this project forward we would recommend that you list them here, but also create separate Issues for each and add the label of "help wanted". This is a well-worn best practice for projects living in GitHub.
+### Project Resources
+* [Snowfakery] (https://github.com/SFDO-Tooling/Snowfakery)
+* Michael Kolodner has code for creating a "complete" (not full) data set for a medium scale complex org
+* [Fellow Developers, What Should Our Last Name Be?](https://dev.to/roygreenfeld/fellow-developers-what-should-our-last-name-be-cle)
+* [Data Management with CumulusCI Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/data-management-with-cumulusci?trail_id=build-applications-with-cumulusci)
+* [Data Generation Tool project on Power of Us Hub] (https://powerofus.force.com/s/group/0F91E000000brOoSAI/data-generation-tool)
+* [Smart Sandbox](https://www.smartsandbox.com/index.html): their website is still up but no longer active
+* [Faker Documentation](https://faker.readthedocs.io/en/master/)
+* [NPSP Data Dictionary](https://attain-projects.quip.com/yD1wAsdz1m1Q/NPSP-Public-Data-Dictionary)
+* Own Backup has a feature for seeding training sandboxes
+* [Aarons_blog_post] (https://spinningcode.org/2016/09/bad-data-systems-do-not-justify-sexist-your-behavior/)
+* Proprietary tools
+* Related (or helpful) other data generation solutions
+    * [Wave Data Generator](https://github.com/ttse-sfdc/sfdc-wave-data-generator) (generates data for Salesforce org, and builds linkages between objects)
