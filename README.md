@@ -3,16 +3,16 @@
 
 _HUGE props to Cisco for the logo!!!!_
 
-## Project Name
+### Project Name
 Data Generation Tool
 
-## Project Theme
+### Project Theme
 How would you categorize your project? For example, are you creating an app and/or component, writing documentation, focusing on the community ecosystem, making videos, etc. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
 
-## Project Vertical
+### Project Vertical
 How would you define the audience for your project? For example, nonprofits, education, or everyone. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
 
-## Project Description
+### Project Description
 This project aims to create a process that will generate test data sets based on admin-selected criteria.
 
 Test data are defined as valid records for a set of standard and custom Salesforce objects that represent complete stories and singficant use cases/permutations that are represent programs or personas in the org.
@@ -42,27 +42,27 @@ Help us give you the thanks you deserve and ensure future contributors know who 
     * Samantha Shain (William Penn Foundation)
     * Cassie Supilowski (OneGoal)
 
-#### Past Project Team
+### Past Project Team Members
 
-Full Name | Team Role | Github Username
------------- | ------------- | -------------
-Aaron Crosman | Philly 2019, Spring 2020 Sprint Team Leader | [acrosman](https://github.com/acrosman)
-Erin Schroder | Spring 2020 Scribe |
-Kim Snipes | Philly Sprint GitHub Scribe | [kimsnipes](https://github.com/kimsnipes)
-Andrew Curran | Contributor | [andrew-curran](https://github.com/andrew-curran)
-Francisco Borges | Contributor
-Fatama Ahmed | Contributor
-Jason Lantz | Contributor | [jlantz](https://github.com/jlantz)
-David Reed | Contributor | [davidmreed](https://github.com/davidmreed)
-Allison Letts | Contributor | [allisonletts](https://github.com/allisonletts)
-Cassie Supilowski | Contributor | [csupilow](https://github.com/csupilow)
-Michael Beaty | Contributor |
-Rebecca Cole Sullivan | Contributor | [rcolesullivan](https://github.com/rcolesullivan)
-Paul Prescod | Contributor |
-Amanda Styles | Contributor | [demanda](https://github.com/demanda)
-Tyler Woebkenberg | Contributor |
-Chris Chen | Contributor |
-Michael Kolodner | Contributor | [mkolodner](https://github.com/mkolodner)
+Full Name              | Team Role          | Github Username                                   | Sprint(s)
+------------           | -------------      | -------------                                     | ------------- 
+Aaron Crosman          | Sprint Team Leader | [acrosman](https://github.com/acrosman)           |2019 Philly, Virtual March 2020 
+Erin Schroder          | Scribe             | [eschroder](https://github.com/eschroder)         |Virtual March 2020
+Kim Snipes             | Scribe             | [kimsnipes](https://github.com/kimsnipes)         |2019 Philly Sprint 
+Andrew Curran          | Contributor        | [andrew-curran](https://github.com/andrew-curran) |2019 Philly Sprint 
+Francisco Borges       | Contributor        | [ciscoborges](https://github.com/ciscoborges)     |2019 Philly Sprint 
+Fatama Ahmed           | Contributor        | [ffarag85](https://github.com/ffarag85)           |2019 Philly Sprint 
+Jason Lantz            | Contributor        | [jlantz](https://github.com/jlantz)               |2019 Philly, Virtual March 2020 
+David Reed             | Contributor        | [davidmreed](https://github.com/davidmreed)       |2019 Philly, Virtual March 2020 
+Allison Letts          | Contributor        | [allisonletts](https://github.com/allisonletts)   |2019 Philly, Virtual March 2020 
+Cassie Supilowski      | Contributor        | [csupilow](https://github.com/csupilow)           |Virtual March 2020
+Michael Beaty          | Contributor        | [mbeaty-sf](https://github.com/mbeaty-sf)         |Virtual March 2020
+Rebecca Cole Sullivan  | Contributor        | [rcolesullivan](https://github.com/rcolesullivan) |Virtual March 2020
+Paul Prescod           | Contributor        | [prescod](https://github.com/prescod)             |Virtual March 2020
+Amanda Styles          | Contributor        | [demanda](https://github.com/demanda)             |Virtual March 2020
+Tyler Woebkenberg      | Contributor        | [tylerw-sfdc](https://github.com/tylerw-sfdc)     |Virtual March 2020
+Chris Chen             | Contributor        | [chrisVCH](https://github.com/chrisVCH)           |Virtual March 2020
+Michael Kolodner       | Contributor        | [mkolodner](https://github.com/mkolodner)         |2019 Philly, Virtual March 2020
 
 ### Project Resources
 * [Snowfakery](https://github.com/SFDO-Tooling/Snowfakery)
