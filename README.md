@@ -42,6 +42,16 @@ Help us give you the thanks you deserve and ensure future contributors know who 
     * Samantha Shain (William Penn Foundation)
     * Cassie Supilowski (OneGoal)
 
+### Project Team Accomplishments 
+* [3/1 -> 4/1 virtual sprint]
+    * Determined that Snowfakery accomplishes many of the original requirements brainstormed at the Philly Sprint (fall 2019) (namely: ability to generate mock data with related tables, random names and values, standard and custom objects, datasets of any size/scale, ability to populate Salesforce orgs)
+    * Socialized Snowfakery to community members
+    * Onboarded project leadership from multiple orgs and began application for inclusion in Open Source Commons program
+    * Refined use cases and differentiated Snowfakery from (1) existing tools in the market (2) proprietary tools at Salesforce (3) Full Sandbox product
+    * Brainstormed 2+ potential directions for extending Snowfakery to include an admin-friendly web interface
+    * Reviewed documentation and install steps
+    * Overhauled ReadMe file
+
 ### Past Project Team Members
 
 Full Name              | Team Role          | Github Username                                   | Sprint(s)
