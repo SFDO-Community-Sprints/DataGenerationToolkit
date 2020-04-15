@@ -1,16 +1,21 @@
+## Project Name
+Data Generation Tool
 
 ![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
 
 _HUGE props to Cisco for the logo!!!!_
 
-### Project Name
-Data Generation Tool
+## Project Theme
 
-### Project Theme
 How would you categorize your project? For example, are you creating an app and/or component, writing documentation, focusing on the community ecosystem, making videos, etc. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
 
-### Project Vertical
-How would you define the audience for your project? For example, nonprofits, education, or everyone. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
+Proposed theme:
+* theme-community-ecosystem
+
+## Project Vertical
+Everyone.
+
+This project is aimed at helping ease the process of generating test data for projects. Nearly all Salesforce projects benefit from improving this process.
 
 ### Project Description
 This project aims to create a process that will generate test data sets based on admin-selected criteria.
@@ -42,7 +47,7 @@ Help us give you the thanks you deserve and ensure future contributors know who 
     * Samantha Shain (William Penn Foundation)
     * Cassie Supilowski (OneGoal)
 
-### Project Team Accomplishments 
+### Project Team Accomplishments
 * [3/1 -> 4/1 virtual sprint]
     * Determined that Snowfakery accomplishes many of the original requirements brainstormed at the Philly Sprint (fall 2019) (namely: ability to generate mock data with related tables, random names and values, standard and custom objects, datasets of any size/scale, ability to populate Salesforce orgs)
     * Socialized Snowfakery to community members
@@ -55,16 +60,16 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 ### Past Project Team Members
 
 Full Name              | Team Role          | Github Username                                   | Sprint(s)
-------------           | -------------      | -------------                                     | ------------- 
-Aaron Crosman          | Sprint Team Leader | [acrosman](https://github.com/acrosman)           |2019 Philly, Virtual March 2020 
+------------           | -------------      | -------------                                     | -------------
+Aaron Crosman          | Sprint Team Leader | [acrosman](https://github.com/acrosman)           |2019 Philly, Virtual March 2020
 Erin Schroder          | Scribe             | [eschroder](https://github.com/eschroder)         |Virtual March 2020
-Kim Snipes             | Scribe             | [kimsnipes](https://github.com/kimsnipes)         |2019 Philly Sprint 
-Andrew Curran          | Contributor        | [andrew-curran](https://github.com/andrew-curran) |2019 Philly Sprint 
-Francisco Borges       | Contributor        | [ciscoborges](https://github.com/ciscoborges)     |2019 Philly Sprint 
-Fatama Ahmed           | Contributor        | [ffarag85](https://github.com/ffarag85)           |2019 Philly Sprint 
-Jason Lantz            | Contributor        | [jlantz](https://github.com/jlantz)               |2019 Philly, Virtual March 2020 
-David Reed             | Contributor        | [davidmreed](https://github.com/davidmreed)       |2019 Philly, Virtual March 2020 
-Allison Letts          | Contributor        | [allisonletts](https://github.com/allisonletts)   |2019 Philly, Virtual March 2020 
+Kim Snipes             | Scribe             | [kimsnipes](https://github.com/kimsnipes)         |2019 Philly Sprint
+Andrew Curran          | Contributor        | [andrew-curran](https://github.com/andrew-curran) |2019 Philly Sprint
+Francisco Borges       | Contributor        | [ciscoborges](https://github.com/ciscoborges)     |2019 Philly Sprint
+Fatama Ahmed           | Contributor        | [ffarag85](https://github.com/ffarag85)           |2019 Philly Sprint
+Jason Lantz            | Contributor        | [jlantz](https://github.com/jlantz)               |2019 Philly, Virtual March 2020
+David Reed             | Contributor        | [davidmreed](https://github.com/davidmreed)       |2019 Philly, Virtual March 2020
+Allison Letts          | Contributor        | [allisonletts](https://github.com/allisonletts)   |2019 Philly, Virtual March 2020
 Cassie Supilowski      | Contributor        | [csupilow](https://github.com/csupilow)           |Virtual March 2020
 Michael Beaty          | Contributor        | [mbeaty-sf](https://github.com/mbeaty-sf)         |Virtual March 2020
 Rebecca Cole Sullivan  | Contributor        | [rcolesullivan](https://github.com/rcolesullivan) |Virtual March 2020
