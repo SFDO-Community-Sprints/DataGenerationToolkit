@@ -1,16 +1,21 @@
+## Project Name
+Data Generation Tool
 
 ![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
 
 _HUGE props to Cisco for the logo!!!!_
 
-## Project Name
-Data Generation Tool
-
 ## Project Theme
+
 How would you categorize your project? For example, are you creating an app and/or component, writing documentation, focusing on the community ecosystem, making videos, etc. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
 
+Proposed theme:
+* theme-community-ecosystem
+
 ## Project Vertical
-How would you define the audience for your project? For example, nonprofits, education, or everyone. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
+Everyone.
+
+This project is aimed at helping ease the process of generating test data for projects. Nearly all Salesforce projects benefit from improving this process.
 
 ## Project Description
 This project aims to create a process that will generate test data sets based on admin-selected criteria.
