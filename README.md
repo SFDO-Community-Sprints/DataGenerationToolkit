@@ -1,6 +1,10 @@
 ## Project Name
 Data Generation Tool
 
+
+### Project Name
+Data Generation Tool
+
 ![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
 
 _HUGE props to Cisco for the logo!!!!_
