@@ -1,13 +1,13 @@
 ## Project Name
-Data Generation Tool
+Data Generation Toolkit
 
 
 ### Project Name
-Data Generation Tool
+Data Generation Toolkit
 
-![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
+![Data Generation Toolkit Logo featuring Astro in a rain of data](https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenerationLogoFinal051320.png)
 
-_HUGE props to Cisco for the logo!!!!_
+_Thanks to Cisco for the logo. Originally created during the Philly Sprint and updated in May when the project became official._
 
 ## Project Theme
 
@@ -22,7 +22,7 @@ Everyone.
 This project is aimed at helping ease the process of generating test data for projects. Nearly all Salesforce projects benefit from improving this process.
 
 ### Project Description
-This project aims to create a process that will generate test data sets based on admin-selected criteria.
+This project aims to create toolkit of tools and documentation for generating test data sets based on admin-selected criteria.
 
 Test data are defined as valid records for a set of standard and custom Salesforce objects that represent complete stories and singficant use cases/permutations that are represent programs or personas in the org.
 
@@ -42,7 +42,7 @@ Major use cases for these data sets include:
 * Prioritize leadership development/capacity building through project leadership/contributions from customers, partners, devs, etc
 
 ### Hub Group Link
-https://powerofus.force.com/s/group/0F91E000000brOoSAI/data-generation-tool
+https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation
 
 ### Current Project Team
 Help us give you the thanks you deserve and ensure future contributors know who to contact if they have questions! Please ensure that all contributing members of the team are included.
@@ -88,7 +88,7 @@ Michael Kolodner       | Contributor        | [mkolodner](https://github.com/mko
 * Michael Kolodner has code for creating a "complete" (not full) data set for a medium scale complex org
 * [Fellow Developers, What Should Our Last Name Be?](https://dev.to/roygreenfeld/fellow-developers-what-should-our-last-name-be-cle)
 * [Data Management with CumulusCI Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/data-management-with-cumulusci?trail_id=build-applications-with-cumulusci)
-* [Data Generation Tool project on Power of Us Hub](https://powerofus.force.com/s/group/0F91E000000brOoSAI/data-generation-tool)
+* [Data Generation Toolkit project on Power of Us Hub](https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation)
 * [Smart Sandbox](https://www.smartsandbox.com/index.html): their website is still up but no longer active
 * [Faker Documentation](https://faker.readthedocs.io/en/master/)
 * [NPSP Data Dictionary](https://attain-projects.quip.com/yD1wAsdz1m1Q/NPSP-Public-Data-Dictionary)
