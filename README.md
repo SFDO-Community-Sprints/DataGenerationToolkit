@@ -1,27 +1,7 @@
-## Project Name
-Data Generation Toolkit
+## Data Generation Toolkit
 
+<img src="https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenerationLogoFinal051320.png" width="300" alt="Data Generation Toolkit Logo featuring Astro in a rain of data" style="float:right" >
 
-### Project Name
-Data Generation Toolkit
-
-![Data Generation Toolkit Logo featuring Astro in a rain of data](https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenerationLogoFinal051320.png)
-
-_Thanks to Cisco for the logo. Originally created during the Philly Sprint and updated in May when the project became official._
-
-## Project Theme
-
-How would you categorize your project? For example, are you creating an app and/or component, writing documentation, focusing on the community ecosystem, making videos, etc. [Learn how](https://github.com/SFDO-Community-Sprints/Welcome/wiki/SFDO-Community-Sprints-Topic-Overview) this information loops back into Sprint project work!
-
-Proposed theme:
-* theme-community-ecosystem
-
-## Project Vertical
-Everyone.
-
-This project is aimed at helping ease the process of generating test data for projects. Nearly all Salesforce projects benefit from improving this process.
-
-### Project Description
 This project aims to create toolkit of tools and documentation for generating test data sets based on admin-selected criteria.
 
 Test data are defined as valid records for a set of standard and custom Salesforce objects that represent complete stories and singficant use cases/permutations that are represent programs or personas in the org.
@@ -41,17 +21,38 @@ Major use cases for these data sets include:
 * Develop process for how you can build test data sets that follow a story (automated? manual? best practice doc?)
 * Prioritize leadership development/capacity building through project leadership/contributions from customers, partners, devs, etc
 
+### Ongoing Projects
+
+Currently the project team has two major efforts for our work:
+
+* Documentation of existing tools and partial solutions
+* Creation of a community supported tool that will empower easy creation of data sets tailored to an org's needs.
+
 ### Hub Group Link
+
 https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation
 
+## Project Theme
+
+* theme-community-ecosystem
+
+## Project Vertical
+
+_Everyone._
+
+This project is aimed at helping ease the process of generating test data for projects. Nearly all Salesforce projects benefit from improving this process.
+
 ### Current Project Team
+
 Help us give you the thanks you deserve and ensure future contributors know who to contact if they have questions! Please ensure that all contributing members of the team are included.
+
 * Team Leader(s):
     * Aaron Crosman (Attain)
     * Samantha Shain (William Penn Foundation)
     * Cassie Supilowski (OneGoal)
 
 ### Project Team Accomplishments
+
 * [3/1 -> 4/1 virtual sprint]
     * Determined that Snowfakery accomplishes many of the original requirements brainstormed at the Philly Sprint (fall 2019) (namely: ability to generate mock data with related tables, random names and values, standard and custom objects, datasets of any size/scale, ability to populate Salesforce orgs)
     * Socialized Snowfakery to community members
@@ -83,7 +84,8 @@ Tyler Woebkenberg      | Contributor        | [tylerw-sfdc](https://github.com/t
 Chris Chen             | Contributor        | [chrisVCH](https://github.com/chrisVCH)           |Virtual March 2020
 Michael Kolodner       | Contributor        | [mkolodner](https://github.com/mkolodner)         |2019 Philly, Virtual March 2020
 
-### Project Resources
+## Useful References
+
 * [Snowfakery](https://github.com/SFDO-Tooling/Snowfakery)
 * Michael Kolodner has code for creating a "complete" (not full) data set for a medium scale complex org
 * [Fellow Developers, What Should Our Last Name Be?](https://dev.to/roygreenfeld/fellow-developers-what-should-our-last-name-be-cle)
@@ -93,7 +95,7 @@ Michael Kolodner       | Contributor        | [mkolodner](https://github.com/mko
 * [Faker Documentation](https://faker.readthedocs.io/en/master/)
 * [NPSP Data Dictionary](https://attain-projects.quip.com/yD1wAsdz1m1Q/NPSP-Public-Data-Dictionary)
 * Own Backup has a feature for seeding training sandboxes
-* [Aarons_blog_post](https://spinningcode.org/2016/09/bad-data-systems-do-not-justify-sexist-your-behavior/)
+* [Aarons blog post](https://spinningcode.org/2016/09/bad-data-systems-do-not-justify-sexist-your-behavior/)
 * Proprietary tools
 * Related (or helpful) other data generation solutions
     * [Wave Data Generator](https://github.com/ttse-sfdc/sfdc-wave-data-generator) (generates data for Salesforce org, and builds linkages between objects)
