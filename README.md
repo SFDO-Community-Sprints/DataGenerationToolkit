@@ -77,7 +77,7 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 | Rebecca Cole Sullivan | [rcolesullivan](https://github.com/rcolesullivan)   | Virtual Mar. 2020                                  |
 | Aaron Crosman         | [acrosman](https://github.com/acrosman)             | 2019 Philly, Virtual Mar. 2020, Virtual Sept. 2020 |
 | Andrew Curran         | [andrew-curran](https://github.com/andrew-curran)   | 2019 Philly Sprint                                 |
-| Marciana Davis        |                                                     | Virtual Sept. 2020                                 |
+| Marciana Davis        | [mdportfolio](https://github.com/mdportfolio)       | Virtual Sept. 2020                                 |
 | Debbie Duran          |                                                     | Virtual Sept. 2020                                 |
 | Michael Kolodner      | [mkolodner](https://github.com/mkolodner)           | 2019 Philly, Virtual Mar. 2020, Virtual Sept. 2020 |
 | Jason Lantz           | [jlantz](https://github.com/jlantz)                 | 2019 Philly, Virtual Mar. 2020                     |
