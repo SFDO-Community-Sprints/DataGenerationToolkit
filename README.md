@@ -66,32 +66,32 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 
 ### Past Project Team Members
 
-| Full Name             | Github Username                                   | Sprint(s)                                          |
-| --------------------- | ------------------------------------------------- | -------------------------------------------------- |
-| Fatama Ahmed          | [ffarag85](https://github.com/ffarag85)           | 2019 Philly Sprint                                 |
-| Michael Beaty         | [mbeaty-sf](https://github.com/mbeaty-sf)         | Virtual Mar. 2020, Virtual Sept. 2020              |
-| Andrew Beyer          |                                                   | Virtual Sept. 2020                                 |
-| Joe Blodgett          |                                                   | Virtual Sept. 2020                                 |
-| Francisco Borges      | [ciscoborges](https://github.com/ciscoborges)     | 2019 Philly Sprint                                 |
-| Chris Chen            | [chrisVCH](https://github.com/chrisVCH)           | Virtual Mar. 2020                                  |
-| Rebecca Cole Sullivan | [rcolesullivan](https://github.com/rcolesullivan) | Virtual Mar. 2020                                  |
-| Aaron Crosman         | [acrosman](https://github.com/acrosman)           | 2019 Philly, Virtual Mar. 2020, Virtual Sept. 2020 |
-| Andrew Curran         | [andrew-curran](https://github.com/andrew-curran) | 2019 Philly Sprint                                 |
-| Marciana Davis        |                                                   | Virtual Sept. 2020                                 |
-| Debbie Duran          |                                                   | Virtual Sept. 2020                                 |
-| Michael Kolodner      | [mkolodner](https://github.com/mkolodner)         | 2019 Philly, Virtual Mar. 2020, Virtual Sept. 2020 |
-| Jason Lantz           | [jlantz](https://github.com/jlantz)               | 2019 Philly, Virtual Mar. 2020                     |
-| Allison Letts         | [allisonletts](https://github.com/allisonletts)   | 2019 Philly, Virtual Mar. 2020                     |
-| Jung Mun              |                                                   | Virtual Sept. 2020                                 |
-| Lawrence Newcombe     |                                                   | Virtual Sept. 2020                                 |
-| Paul Prescod          | [prescod](https://github.com/prescod)             | Virtual Mar. 2020, Virtual Sept. 2020              |
-| David Reed            | [davidmreed](https://github.com/davidmreed)       | 2019 Philly, Virtual Mar. 2020                     |
-| Erin Schroder         | [eschroder](https://github.com/eschroder)         | Virtual Mar. 2020                                  |
-| Samantha Shain        | [samanthashain](https://github.com/samanthashain) | Virtual Mar. 2020, Virtual Sept. 2020              |
-| Kim Snipes            | [kimsnipes](https://github.com/kimsnipes)         | 2019 Philly Sprint                                 |
-| Cassie Supilowski     | [csupilow](https://github.com/csupilow)           | Virtual Mar. 2020, Virtual Sept. 2020              |
-| Amanda Styles         | [demanda](https://github.com/demanda)             | Virtual Mar. 2020                                  |
-| Tyler Woebkenberg     | [tylerw-sfdc](https://github.com/tylerw-sfdc)     | Virtual Mar. 2020                                  |
+| Full Name             | Github Username                                     | Sprint(s)                                          |
+| --------------------- | --------------------------------------------------- | -------------------------------------------------- |
+| Fatama Ahmed          | [ffarag85](https://github.com/ffarag85)             | 2019 Philly Sprint                                 |
+| Michael Beaty         | [mbeaty-sf](https://github.com/mbeaty-sf)           | Virtual Mar. 2020, Virtual Sept. 2020              |
+| Andrew Beyer          |                                                     | Virtual Sept. 2020                                 |
+| Joe Blodgett          |                                                     | Virtual Sept. 2020                                 |
+| Francisco Borges      | [ciscoborges](https://github.com/ciscoborges)       | 2019 Philly Sprint                                 |
+| Chris Chen            | [chrisVCH](https://github.com/chrisVCH)             | Virtual Mar. 2020                                  |
+| Rebecca Cole Sullivan | [rcolesullivan](https://github.com/rcolesullivan)   | Virtual Mar. 2020                                  |
+| Aaron Crosman         | [acrosman](https://github.com/acrosman)             | 2019 Philly, Virtual Mar. 2020, Virtual Sept. 2020 |
+| Andrew Curran         | [andrew-curran](https://github.com/andrew-curran)   | 2019 Philly Sprint                                 |
+| Marciana Davis        |                                                     | Virtual Sept. 2020                                 |
+| Debbie Duran          |                                                     | Virtual Sept. 2020                                 |
+| Michael Kolodner      | [mkolodner](https://github.com/mkolodner)           | 2019 Philly, Virtual Mar. 2020, Virtual Sept. 2020 |
+| Jason Lantz           | [jlantz](https://github.com/jlantz)                 | 2019 Philly, Virtual Mar. 2020                     |
+| Allison Letts         | [allisonletts](https://github.com/allisonletts)     | 2019 Philly, Virtual Mar. 2020                     |
+| Jung Mun              | [eehjunggnujhee](https://github.com/eehjunggnujhee) | Virtual Sept. 2020                                 |
+| Lawrence Newcombe     | [LawrenceLoz](https://github.com/LawrenceLoz)       | Virtual Sept. 2020                                 |
+| Paul Prescod          | [prescod](https://github.com/prescod)               | Virtual Mar. 2020, Virtual Sept. 2020              |
+| David Reed            | [davidmreed](https://github.com/davidmreed)         | 2019 Philly, Virtual Mar. 2020                     |
+| Erin Schroder         | [eschroder](https://github.com/eschroder)           | Virtual Mar. 2020                                  |
+| Samantha Shain        | [samanthashain](https://github.com/samanthashain)   | Virtual Mar. 2020, Virtual Sept. 2020              |
+| Kim Snipes            | [kimsnipes](https://github.com/kimsnipes)           | 2019 Philly Sprint                                 |
+| Cassie Supilowski     | [csupilow](https://github.com/csupilow)             | Virtual Mar. 2020, Virtual Sept. 2020              |
+| Amanda Styles         | [demanda](https://github.com/demanda)               | Virtual Mar. 2020                                  |
+| Tyler Woebkenberg     | [tylerw-sfdc](https://github.com/tylerw-sfdc)       | Virtual Mar. 2020                                  |
 
 ## Useful References
 
