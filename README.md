@@ -55,6 +55,13 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 
 ### Project Team Accomplishments
 
+- [9/23-9/24 Virtual Sprint]
+  - Drafted architecture diagrams for a UI to sit on top of Snowfakery. This will be called Snowmakery! There are two proof of concepts that have been initiated. One is inside of the org, the other is in Heroku.
+  - Analyzed survey data from 75 community members; updated relevant Personas based on survey insights
+  - Established document outline and Admin Story for documentation project that describes how to Generate Data and Move Data between orgs
+  - Documented limitations and considerations for Partial Data sampling algorithm and manual steps, third party apps, and code for creating mock data records
+  - Documented steps for an Admin-audience to use CCI to move data records from one Dev Sandbox to another Dev Sandbox (or any two persistent orgs)
+  - QA-ed documentation steps for CCI steps (referenced above)
 - [3/1 -> 4/1 virtual sprint]
   - Determined that Snowfakery accomplishes many of the original requirements brainstormed at the Philly Sprint (fall 2019) (namely: ability to generate mock data with related tables, random names and values, standard and custom objects, datasets of any size/scale, ability to populate Salesforce orgs)
   - Socialized Snowfakery to community members
