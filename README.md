@@ -1,6 +1,8 @@
-![](https://github.com/SFDO-Sprint-2019-Philadelphia/DataGenerationTool/blob/master/Assets/Data%20Generation%20Logo%20Idea%20v01_small.png)
+## Data Generation Toolkit
 
-_HUGE props to Cisco for the logo!!!!_
+<img src="https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenerationLogoFinal051320.png" width="300" alt="Data Generation Toolkit Logo featuring Astro in a rain of data" style="float:right" >
+
+This project aims to create toolkit of tools and documentation for generating test data sets based on admin-selected criteria.
 
 ### Project Name
 
