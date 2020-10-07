@@ -1,0 +1,34 @@
+<template>
+    <template for:each={recipe} for:item="recipeItem">
+        <div class="slds-border_top" key={recipeItem.ObjectName}>
+            <lightning-card title={recipeItem.ObjectName}>
+                <ul class="slds-m-around_medium">
+
+                    <div class="slds-col slds-size_1-of-3 slds-var-p-around_medium">
+                        <template for:each={recipeItem.Fields} for:item="field">
+                            <li key={field.FieldName}>
+    <!--                            <lightning-button-icon icon-name="utility:ban"  alternative-text="Remove" title="Remove"></lightning-button-icon>   -->
+
+                                <lightning-input 
+                                    type="text" 
+                                    label={field.FieldName} 
+                                    value={field.FixedValue}
+                                    variant="label-inline">
+                                </lightning-input>
+                            </li>
+                        </template>
+                    </div>
+
+                    <lightning-button label="Add Related Object" title="Add Related Object" icon-name="utility:add" class="slds-m-left_x-small"></lightning-button>
+                    
+                    <template if:true={recipeItem.Children}>
+                        <c-recipe-object
+                            recipe={recipeItem.Children}>
+                        </c-recipe-object>
+                    </template>
+
+                </ul>
+            </lightning-card>
+        </div>
+    </template>
+</template>
