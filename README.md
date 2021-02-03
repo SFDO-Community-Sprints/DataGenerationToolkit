@@ -57,6 +57,12 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 
 ### Project Team Accomplishments
 
+- [Between Sept '20 Virtual Sprint and Feb '21 Virtual Sprint]
+  - Completed first full draft of Data Generation Guide document; including technical edit
+  - Kicked the tires on Snowfakery, for real
+  - Made several public presentations
+  - Implemented Project Boards to track issues and discussion topics
+  - Survived despite pandemic, fascism, etc.
 - [9/23-9/24 Virtual Sprint]
   - Drafted architecture diagrams for a UI to sit on top of Snowfakery. This will be called _Snowmakery!_ There are two proof of concepts that have been initiated. One is inside of the org, the other is in Heroku.
   - Analyzed survey data from 75 community members; updated relevant Personas based on survey insights
@@ -127,6 +133,7 @@ Currently those include:
 - Own Backup has a feature for seeding training sandboxes
 - [Aarons blog post](https://spinningcode.org/2016/09/bad-data-systems-do-not-justify-sexist-your-behavior/)
 - Proprietary tools
+- [Samantha's Blogpost] (https://thedataarealright.blog/2021/01/15/snowfakery-till-you-makery/)
 - Related (or helpful) other data generation solutions
 - [Wave Data Generator](https://github.com/ttse-sfdc/sfdc-wave-data-generator) (generates data for Salesforce org, and builds linkages between objects)
 - [JSON/YAML Editor](https://json-editor.github.io/json-editor/)
