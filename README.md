@@ -123,17 +123,13 @@ Currently those include:
   - [Main Docs](https://snowfakery.readthedocs.io/en/docs/)
   - [Snowfakery SF Examples Branch](https://github.com/SFDO-Tooling/Snowfakery/tree/feature/salesforce-examples)
   - [Aaron’s Noodling on a recipe editor (not currently functional)](https://github.com/acrosman/snowmakery)
-- Michael Kolodner has code for creating a "complete" (not full) data set for a medium scale complex org
+  - [Aarons blog post about generating NPSP Data](https://spinningcode.org/2020/11/generate-sample-data-for-salesforce-npsp/)
+  - [Samantha's Blog post about using Snowfakery](https://thedataarealright.blog/2021/01/15/snowfakery-till-you-makery/)
 - [Fellow Developers, What Should Our Last Name Be?](https://dev.to/roygreenfeld/fellow-developers-what-should-our-last-name-be-cle)
 - [Data Management with CumulusCI Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/data-management-with-cumulusci?trail_id=build-applications-with-cumulusci)
 - [Data Generation Toolkit project on Power of Us Hub](https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation)
 - [Smart Sandbox](https://www.smartsandbox.com/index.html): their website is still up but no longer active
 - [Faker Documentation](https://faker.readthedocs.io/en/master/)
 - [NPSP Data Dictionary](https://attain-projects.quip.com/yD1wAsdz1m1Q/NPSP-Public-Data-Dictionary)
-- Own Backup has a feature for seeding training sandboxes
-- [Aarons blog post](https://spinningcode.org/2016/09/bad-data-systems-do-not-justify-sexist-your-behavior/)
-- Proprietary tools
-- [Samantha's Blogpost] (https://thedataarealright.blog/2021/01/15/snowfakery-till-you-makery/)
-- Related (or helpful) other data generation solutions
 - [Wave Data Generator](https://github.com/ttse-sfdc/sfdc-wave-data-generator) (generates data for Salesforce org, and builds linkages between objects)
 - [JSON/YAML Editor](https://json-editor.github.io/json-editor/)
