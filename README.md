@@ -121,7 +121,8 @@ Currently those include:
 
 - [Snowfakery](https://github.com/SFDO-Tooling/Snowfakery)
   - [Main Docs](https://snowfakery.readthedocs.io/en/docs/)
-  - [Snowfakery SF Examples Branch](https://github.com/SFDO-Tooling/Snowfakery/tree/feature/salesforce-examples)
+  - [Paul's SF Architechs blog on snowfakery](https://medium.com/salesforce-architects/generate-realistic-datasets-with-snowfakery-5349225b033d)
+  - [Snowfakery SF Examples](https://github.com/SFDO-Tooling/Snowfakery/tree/master/examples)
   - [Aaron’s Noodling on a recipe editor (not currently functional)](https://github.com/acrosman/snowmakery)
   - [Aarons blog post about generating NPSP Data](https://spinningcode.org/2020/11/generate-sample-data-for-salesforce-npsp/)
   - [Samantha's Blog post about using Snowfakery](https://thedataarealright.blog/2021/01/15/snowfakery-till-you-makery/)
