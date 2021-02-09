@@ -31,6 +31,7 @@ Currently the project team has two major efforts for our work:
 
 - Documentation of existing tools and partial solutions
 - Creation of a community supported tool that will empower easy creation of data sets tailored to an org's needs.
+- Sample Recipes for Salesforce.org packages.
 
 ### Hub Group Link
 
