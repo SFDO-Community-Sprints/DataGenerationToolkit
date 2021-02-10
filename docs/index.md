@@ -5,7 +5,7 @@ This site will be the home for published documents by the Data Generation Toolki
 ## To add content to this site:
 
 1. Clone the [Data Generation Toolkit])(https://github.com/SFDO-Community-Sprints/DataGenerationToolkit) repository.
-1. Create a new branch in your local copy for your new work: `git switch -c documentation/my-new-content` (please try to use something more descriptive than "my-new-content" you are looking for a short description that helps others know what to expect).
+1. Create a new branch in your local copy for your new work: `git checkout -b documentation/my-new-content` (please try to use something more descriptive than "my-new-content" you are looking for a short description that helps others know what to expect).
 1. Create a new file in the repository `docs` directory. The file should be a [Github flavored Markdown](https://github.github.com/gfm/) file (like this file is). When naming your file remember that spaces and puncutation characters can be challenging to deal with. You can add folders as well if that will help.
 1. Add your content to that file.
 1. Stage you changes in git: `git add docs/myFile.md`
