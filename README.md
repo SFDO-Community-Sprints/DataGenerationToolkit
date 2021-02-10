@@ -33,9 +33,9 @@ Currently the project team has two major efforts for our work:
 - Creation of a community supported tool that will empower easy creation of data sets tailored to an org's needs.
 - Sample Recipes for Salesforce.org packages.
 
-### Hub Group Link
+### Project Meetings
 
-https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation
+The main project team meets monthly to maintain momentum between sprints. You can contact us through the [PowerOfUs Hub](https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation) to get details for joining those meetings. Notes from project meetings are recorded on the [wiki for this repository](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 
 ## Project Theme
 
@@ -46,6 +46,8 @@ https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-ge
 _Everyone._
 
 This project is aimed at helping ease the process of generating test data for projects. Nearly all Salesforce projects benefit from improving this process.
+
+To help people identify with specific audiences while creating documentation we have created a series of [project personas](https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenPersonas_202102.pdf) that we speak to and about in our materials. This is not a complete picture of everyone who will benefit, but it helps us focus our efforts and may help you understand us.
 
 ### Current Project Team
 
@@ -120,6 +122,7 @@ Currently those include:
 
 ## Useful References
 
+- [Project Meeting Notes](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 - [Snowfakery](https://github.com/SFDO-Tooling/Snowfakery)
   - [Main Docs](https://snowfakery.readthedocs.io/en/docs/)
   - [Paul's SF Architechs blog on snowfakery](https://medium.com/salesforce-architects/generate-realistic-datasets-with-snowfakery-5349225b033d)
