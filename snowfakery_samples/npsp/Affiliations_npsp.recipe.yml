@@ -96,7 +96,7 @@
                     pick:
                       date_between:
                         start_date: -3m
-                        end_date: -1m
+                        end_date: -1d
                 - choice:
                     pick: null
             npe5__Contact__c:
