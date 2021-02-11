@@ -1,76 +1,178 @@
 # most of the declarations are actually in the macro file
 - include_file: eda_macros.yml
 
-# Account, Contact, Opportunity, etcs.
+# The EDA Account Model creates an Administrative or Household account when
+# a contact is created, so there's no need to create a Contact's account here.
+
+# Create Univesity Departments
 - object: Account
+  # just_once: True
+  count: 10
   fields:
-    name: ${{fake.first_name}} ${{fake.last_name}} Account
+    name: "University Department ${{child_index + 1}}"
+    RecordType: 'University_Department'
 
 - object: Contact
+  count: 10
   fields:
-    FirstName: ${{fake.first_name}}
-    LastName: ${{fake.last_name}}
-
-- object: hed__Address__c
-  just_once: True
-  fields:
-    hed__Geolocation__Latitude__s:
+    LastName:
+      fake: first_name
+    FirstName:
+      fake: last_name
+    Salutation:
+      random_choice:
+        Mr.: 40%
+        Ms.: 40%
+        Dr.: 10%
+        Prof.: 10%
+    OtherStreet:
+      fake.text:
+        max_nb_chars: 100
+    OtherCity:
+      fake: city
+    OtherState:
+      fake: state
+    OtherPostalCode:
+      fake: postalcode
+    OtherCountry: "United States"
+    OtherLatitude:
       fake: latitude
-    hed__Geolocation__Longitude__s:
+    OtherLongitude:
       fake: longitude
-    hed__Latest_End_Date__c:
+    OtherGeocodeAccuracy:
+      random_choice:
+        - Address
+        - NearAddress
+        - Block
+        - Street
+        - ExtendedZip
+        - Zip
+        - Neighborhood
+        - City
+        - County
+        - State
+        - Unknown
+    MailingStreet:
+      fake.text:
+        max_nb_chars: 100
+    MailingCity:
+      fake: city
+    MailingState: 
+      fake: state
+    MailingPostalCode:
+      fake: postalcode
+    MailingCountry: "United States"
+    MailingLatitude:
+      fake: latitude
+    MailingLongitude:
+      fake: longitude
+    MailingGeocodeAccuracy:
+      random_choice:
+        - Address
+        - NearAddress
+        - Block
+        - Street
+        - ExtendedZip
+        - Zip
+        - Neighborhood
+        - City
+        - County
+        - State
+        - Unknown
+    Phone:
+      fake: phone_number
+    Fax:
+      fake: phone_number
+    MobilePhone:
+      fake: phone_number
+    HomePhone:
+      fake: phone_number
+    OtherPhone:
+      fake: phone_number
+    AssistantPhone:
+      fake: phone_number
+    # ReportsToId:
+    #   reference: BossContact # you need to have defined this Contact elsewhere
+    Email:
+      fake: email
+    Title:
+      fake.text:
+        max_nb_chars: 100
+    Department:
+      fake.text:
+        max_nb_chars: 80
+    AssistantName:
+      fake: name
+    LeadSource:
+      random_choice:
+        - Web
+        - Phone Inquiry
+        - Partner Referral
+        - Purchased List
+        - Other
+    Birthdate:
       date_between:
         start_date: -1y
         end_date: today
-    hed__Latest_Start_Date__c:
-      date_between:
-        start_date: -3y
-        end_date: -2y
-    hed__MailingCity__c:
-      fake: city
-    hed__MailingCountry__c:
-      fake: country
-    hed__MailingPostalCode__c:
-      fake: postalcode
-    hed__MailingState__c:
-      fake: state
-    hed__MailingStreet__c:
-      fake: street_address
-    hed__Parent_Account__c:
-      reference: Account
-    hed__Parent_Contact__c:
-      reference: Contact
-    hed__Seasonal_End_Day__c:
-      random_number:
-        min: 1
-        max: 31
-    hed__Seasonal_End_Month__c:
-      random_number:
-        min: 1
-        max: 12
-    hed__Seasonal_End_Year__c:
-      random_number:
-        min: 2020
-        max: 2022
-    hed__Seasonal_Start_Day__c:
-      random_number:
-        min: 1
-        max: 31
-    hed__Seasonal_Start_Month__c:
-      random_number:
-        min: 1
-        max: 12
-    hed__Seasonal_Start_Year__c:
-      random_number:
-        min: 2000
-        max: 2010
+    Description:
+      fake.text:
+        max_nb_chars: 100
+    EmailBouncedReason:
+      fake.text:
+        max_nb_chars: 100
+    EmailBouncedDate: ${{fake.date}}T${{fake.time}}Z
+    # CleanStatus:
+    #   random_choice:
+    #     - Matched
+    #     - Different
+    #     - Acknowledged
+    #     - NotFound
+    #     - Inactive
+    #     - Pending
+    #     # - SelectMatch  # causes problems
+    #     - Skipped
+  friends:
+    # Set primary department
+    - object: hed__Affiliation__c
+      fields:
+        hed__Account__c:
+          random_reference: Account
+        hed__Contact__c:
+          reference: Contact
+        hed__Primary__c: "True"
+        hed__Description__c:
+          fake: catch_phrase
+        hed__StartDate__c:
+          date_between:
+            start_date: -1y
+            end_date: today
+        hed__EndDate__c:
+          date_between:
+            start_date: today
+            end_date: +1y
+        hed__Role__c:
+          random_choice:
+            - Student
+            - Prospect
+            - Applicant
+            - Faculty
+            - Employee
 
+# Create Academic Program account records
+- object: Account
+  count: 10
+  fields:
+    name: "Account ${{child_index + 1}}"
+    RecordType: 'Academic_Program'
+
+# Create Affiliations records between Contacts and Academic Programs
 - object: hed__Affiliation__c
+  count: 100
   fields:
     hed__Account__c:
-      reference: Account
+      random_reference: Account
     hed__Contact__c:
-      reference: Contact
+      random_reference: Contact
     hed__Description__c:
       fake: catch_phrase
     hed__StartDate__c:
@@ -88,10 +190,6 @@
         - Applicant
         - Faculty
         - Employee
-    Related_Opportunity_Contact_Role__c:
-      random_choice:
-        - Soft Credit
-        - Solicitor
 
 - object: hed__Term__c
   fields:
@@ -130,7 +228,7 @@
         end_date: today
     hed__Applicant__c:
       reference: Contact
-    hed__Application_Date__c: <<fake.date>>T<<fake.time>>Z
+    hed__Application_Date__c: ${{fake.date}}T${{fake.time}}Z
     hed__Application_Decision_Date__c:
       date_between:
         start_date: -1y

@@ -1,4 +1,4 @@
-# Account, Contact, Opportunity, etcs.
+# Account, Contact, etcs.
 - macro: incl_hed__Address__c
   fields:
     hed__Geolocation__Latitude__s:
@@ -155,10 +155,6 @@
       date_between:
         start_date: -1y
         end_date: today
-    Related_Opportunity_Contact_Role__c:
-      random_choice:
-        - Soft Credit
-        - Solicitor
 - macro: incl_hed__Affl_Mappings__c
   fields:
     Name:
@@ -185,7 +181,7 @@
         start_date: -1y
         end_date: today
     __hed__Applicant__c__disabled: "OPTIONAL REFERENCE SKIPPED: ['Contact']"
-    hed__Application_Date__c: <<fake.date>>T<<fake.time>>Z
+    hed__Application_Date__c: ${{fake.date}}T${{fake.time}}Z
     hed__Application_Decision_Date__c:
       date_between:
         start_date: -1y
@@ -619,11 +615,6 @@
         - Grandchild
         - Employer
         - Employee
-    Related_Opportunity_Contact_Role__c:
-      random_choice:
-        - Soft Credit
-        - Solicitor
-        - Tribute
 - macro: incl_hed__Term_Grade__c
   fields:
     __hed__Contact__c__disabled: "OPTIONAL REFERENCE SKIPPED: ['Contact']"
