@@ -1,27 +1,21 @@
 ## NPSP Opportunities with contact soft credits
-## create a NPSP Account
 
-- object: Account
-  fields:
-    name:
-      fake: company
-    RecordType: Organization
-
-## create 3 contacts for that Account
-  friends:
+## create several contacts 
+    
+    
     - object: Contact
-      count: 3 #   3 contacts for every account
+      count: 5
       fields:
         Firstname:
           fake: first_name
         Lastname:
           fake: last_name
-        AccountId:
-          reference: Account
+        #AccountId:
+          #reference: Household 
         npe01__AlternateEmail__c:
-        fake: email
+         fake: email
         npe01__HomeEmail__c:
-        fake: email
+         fake: email
         npe01__Primary_Address_Type__c:
          random_choice:
           - Home
@@ -42,59 +36,52 @@
           max: 100000
         npo02__Best_Gift_Year__c:
           fake: year
-        npo02__Soft_Credit_Last_Year__c:
-         random_number:
-          min: 1
-          max: 100000
-        npo02__Soft_Credit_This_Year__c:
-         random_number:
-          min: 1
-          max: 100000
-        npo02__Soft_Credit_Total__c:
-         random_number:
-          min: 1
-          max: 100000
-        npo02__Soft_Credit_Two_Years_Ago__c:
-         random_number:
-          min: 1
-          max: 100000
-# create 2 opportunities for each contact
-      friends:
-        - object: Opportunity
-          count: 2 # 2 Opportunities per Contact
-          fields:  
-           ContactId:
-              reference: Contact
-           AccountId:
-              reference: Account
-           name: The ${{Contact.Lastname}} Opportunity #need to change this to be unique
-           Amount:
-            random_number:
-             min: 1
-             max: 100000
-           RecordType: 
-            random_choice:
-                Grant: 50%
-                Donation: 30% 
-                Membership: 20%
-           CloseDate: 2021-10-10
-           StageName:  
-            random_choice:
+    
+    #create an account
+    - object: Account
+      nickname: A Household
+      fields:
+       name:
+        fake: company
+       RecordType: HH_Account
+    #create opportunity for that account
+    - object: Opportunity
+      nickname: GrantOpportunity
+      fields:
+       Name: Grant Opportunity
+       Description: A Grant Opportunity
+       AccountId:
+        reference: Account
+       Amount:
+        random_number:
+         min: 1
+         max: 100000
+       RecordType: Grant
+       CloseDate: 2021-10-10
+       StageName: 
+        random_choice:
                 Prospecting: 50%
-                Application Submitted: 50%  
-           friends: #add 1 contact role
-            - object: OpportunityContactRole
-              fields:
-                OpportunityId:
-                  reference: Opportunity
-                ContactId:
-                  reference: Contact
-                Role:
-                  random_choice:
-                    Donor: 20%
-                    Soft Credit: 20%
-                    Honoree: 20%
+                Qualification: 50%
+   #create opportunity contact roles for above opportunity and contacts created earlier
+    - object: OpportunityContactRole
+      count: 5
+      
+      fields:
+        OpportunityId:
+         reference: Opportunity
+        ContactId:
+         random_reference: Contact
+        Role:
+          random_choice:
+           Influencer: 20%
+           Solicitor: 20%
+           Decision Maker: 20%
+           Honoree: 20%
+           Donor: 20%
+           Grant Manager: 20%
                     
+        
+
           
 
 
