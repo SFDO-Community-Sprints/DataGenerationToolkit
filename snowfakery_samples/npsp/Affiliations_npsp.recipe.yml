@@ -85,7 +85,20 @@
               date_between:
                 start_date: -2y
                 end_date: -3m
-            npe5__Status__c: Current
+            npe5__Status__c: 
+              random_choice:
+                - Current
+                - Former
+            npe5__EndDate__c:
+              if:
+                - choice:
+                    when: ${{npe5__Status__c=='Former'}}
+                    pick:
+                      date_between:
+                        start_date: -3m
+                        end_date: -1m
+                - choice:
+                    pick: null
             npe5__Contact__c:
               reference: Contact
             npe5__Organization__c:
