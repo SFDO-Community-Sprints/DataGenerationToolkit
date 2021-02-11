@@ -1,0 +1,68 @@
+
+# macro for donation fields
+- macro: donation
+  fields:
+    npsp__Donation_Amount__c:    
+      random_number:
+        min: 10
+        max: 500
+    npsp__Donation_Date__c:
+      date_between:
+        start_date: 2020-01-01
+        end_date: today
+    npsp__Donation_Stage__c: Closed Won
+    npsp__Home_Street__c: ${{Donation_Amount__c}} Main Street
+    npsp__Home_City__c: New York
+    npsp__Home_State_Province__c: NY
+    npsp__Home_Zip_Postal_Code__c: 12345
+    npsp__Payment_Check_Reference_Number__c:
+      random_number:
+        min: 1000
+        max: 10000
+    npsp__NPSP_Data_Import_Batch__c:
+      reference: batch    
+    
+- object: npsp__DataImportBatch__c
+  nickname: batch
+  fields:
+    Name:
+      fake: name
+    npsp__Batch_Process_Size__c: 50
+    npsp__Batch_Status__c: Open
+    npsp__Contact_Matching_Rule__c: Firstname,Lastname,Email
+    npsp__Donation_Matching_Behavior__c: Do Not Match
+    npsp__Donation_Matching_Rule__c: npsp__donation_amount__c;npsp__donation_date__c
+    
+
+- object: npsp__DataImport__c
+  count:
+    random_number:
+      min: 1
+      max: 10
+  include: donation     
+  fields:
+    npsp__Contact1_Firstname__c:
+      fake: first_name
+    npsp__Contact1_Lastname__c:
+      fake: last_name
+    npsp__Contact1_Personal_Email__c:
+      fake: safe_email
+    npsp__Contact1_Preferred_Email__c: Personal
+    npsp__Account1_Name__c:
+      fake: company
+    npsp__Donation_Donor__c:
+      random_choice:
+       - Contact1
+       - Account1
+    npsp__Donation_Name__c:
+      if:
+        - choice:
+            when: ${{npsp__Donation_Donor__c == 'Contact1' }}
+            pick: 
+              ${{npsp__Contact1_Firstname__c}} ${{npsp__Contact1_Lastname__c}} - ${{npsp__Donation_Date__c}} - ${{npsp__Donation_Amount__c}}
+        - choice:
+            when: ${{npsp__Donation_Donor__c == 'Account1' }}
+            pick:
+              ${{npsp__Account1_Name__c}}- ${{npsp__Donation_Date__c}} - ${{npsp__Donation_Amount__c}}
+
+    
