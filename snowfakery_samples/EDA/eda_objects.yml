@@ -6,6 +6,11 @@
   fields:
     name: ${{fake.first_name}} ${{fake.last_name}} Account
 
+- object: Contact
+  fields:
+    FirstName: ${{fake.first_name}}
+    LastName: ${{fake.last_name}}
+
 - object: hed__Address__c
   just_once: True
   fields:
