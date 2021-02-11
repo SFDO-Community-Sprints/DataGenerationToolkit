@@ -1,0 +1,72 @@
+- object: Account
+  nickname: A Company
+  fields:
+    Name:
+      fake: last_name
+    RecordType: Organization
+
+
+- object: Contact
+  fields:
+    FirstName:
+      fake: first_name
+    LastName:
+      fake: last_name
+
+- macro: commomfields
+  fields:
+    npe03__Amount__c:
+      random_number:
+        min: 10
+        max: 500
+    npsp__Day_of_Month__c:
+      random_number:
+        min: 1
+        max: 28
+    npsp__DisableFirstInstallment__c: true
+    npsp__StartDate__c: 
+      date_between:
+        start_date: 2020-01-01
+        end_date: today
+    npsp__InstallmentFrequency__c: 1
+    npe03__Installment_Period__c: 
+      random_choice:
+        - Monthly
+        - Yearly
+        - Weekly
+        - 1st and 15th
+    npsp__RecurringType__c:
+      random_choice:
+        - Fixed
+        - Open
+    npsp__Status__c:
+      random_choice:
+        Lapsed: 10%
+        Active: 60%
+        Closed: 10%
+        Paused: 20%
+      
+
+- object: npe03__Recurring_Donation__c
+  count:
+    random_number:
+      min: 1
+      max: 10
+  include: commomfields
+  fields:
+    npe03__Contact__c: 
+      reference: Contact
+    Name: RD for ${{npe03__Contact__c.FirstName}} ${{npe03__Contact__c.LastName}}
+    
+
+- object: npe03__Recurring_Donation__c
+  count:
+    random_number:
+      min: 1
+      max: 10
+  include: commomfields
+  fields:
+    npe03__Organization__c: 
+      reference: A Company
+    Name: RD for ${{npe03__Organization__c.Name}}
+    
