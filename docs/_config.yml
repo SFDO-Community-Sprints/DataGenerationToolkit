@@ -1,10 +1,10 @@
 # --- Required options --- #
 
 # Name of website
-title: Data Generation Toolkit Website
+title: Salesforce.org Data Generation Toolkit Website
 
 # Your name to show in the footer
-author: Data Generation Team
+author: Salesforce.org Data Generation Team
 
 # --- List of links in the navigation bar --- #
 
@@ -182,7 +182,7 @@ date_format: "%B %-d, %Y"
 # Output options (more information on Jekyll's site)
 timezone: "America/Toronto"
 markdown: kramdown
-theme: leap-day
+theme: jekyll-theme-leap-day
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
