@@ -21,3 +21,5 @@ robot/DataGenerationTool/results/
 
 # Misc
 .DS_Store
+
+node_modules
