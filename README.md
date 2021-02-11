@@ -4,6 +4,8 @@
 
 > This project aims to create toolkit of tools and documentation for generating test data sets based on admin-selected criteria.
 
+**[Read our guide on getting data into your Salesforce Sandbox!](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide)**
+
 ### Project Vision/Goals
 
 - Everyone has access to an open process/tool to reliably generate sample data for telling user stories.
@@ -35,6 +37,8 @@ Currently the project team has two major efforts for our work:
 - [Project Personas](https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenPersonas_202102.pdf): a collection of people we target our documentation about and to.
 - [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide): a guide to using data with Sandboxes.
 - [Snowfakery Example Library](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/tree/main/snowfakery_samples): a growing collection of Snowfakery data generator recipes for Salesforce.
+
+We keep our most recent full notes from meetings and Sprints in the project wiki. The notes from the [February 2021 Virtual Sprint](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/February-2021-Virtual-Sprint-Accomplishments) are the most recent.
 
 #### Proof of Concept Code:
 
