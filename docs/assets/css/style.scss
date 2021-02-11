@@ -4,13 +4,13 @@
 @import "{{ site.theme }}" ;
 
 footer {
-    visibility: hidden;
+    display: none;
 };
 
 li.tag-h2 {
-    visibility: hidden;
+    display: none;
 };
 
 li.tag-h3 {
-    visibility: hidden;
+    display: none;
 };
