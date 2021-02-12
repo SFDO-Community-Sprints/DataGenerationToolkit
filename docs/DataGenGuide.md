@@ -18,7 +18,7 @@ Alex learned a few great reasons to use sandboxes (in addition to not accidental
 1. Train new team members without creating bad data in your system.
 
 ## Sandboxes and Metadata ##
-What is metadata? Here are some examples: fields, objects, process builders, approval processes, workflow rules. And how do you work with metadata?  Here is one example:  it is helpful to create metadata in a sandbox to test functionality and then [use changesets] (https://trailhead.salesforce.com/en/content/learn/modules/declarative-change-set-development) to move your metadata to Production. 
+What is metadata? Here are some examples: fields, objects, process builders, approval processes, workflow rules. And how do you work with metadata?  Here is one example:  it is helpful to create metadata in a sandbox to test functionality and then [use changesets](https://trailhead.salesforce.com/en/content/learn/modules/declarative-change-set-development) to move your metadata to Production. 
 
 However, metadata is really only helpful if you have data (also known as records!) in the system. When we talk about data in a sandbox, we usually mean sample data. Sample data can be a subset, or sample, of your Production data, or data intended to mimic your Production data. And any old records won’t do! They need to be meaningful and paint a picture of a realistic scenario or persona. Since Friends of Tiny Creek has fundraising, communications, and program data in Salesforce, their sandbox(es) need to have sample data of each type.
 
@@ -31,7 +31,7 @@ The following table shows the types of sample data FTC will create for each of t
 | Program Data          | Households, Contacts, Cohorts, Programs, Enrollments, Creeks (custom object) |
 
 ## Sandbox Data Overview ##
-*First thing’s first:  Alex needs to create a sandbox that will contain FTC’s data AND metadata.  First they learned about [Sandbox Types and Templates] (https://help.salesforce.com/articleView?id=create_test_instance.htm&type=5) and then followed the steps in [Create a sandbox.] (https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5) For the kind of testing and building needed, Alex chose to use Developer sandboxes.*
+*First thing’s first:  Alex needs to create a sandbox that will contain FTC’s data AND metadata.  First they learned about [Sandbox Types and Templates](https://help.salesforce.com/articleView?id=create_test_instance.htm&type=5) and then followed the steps in [Create a sandbox.](https://help.salesforce.com/articleView?id=data_sandbox_create.htm&type=5) For the kind of testing and building needed, Alex chose to use Developer sandboxes.*
 
 To populate a sandbox with data, there are two required steps:
 1. Generate a set of records
