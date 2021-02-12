@@ -1,0 +1,134 @@
+# This will create 1 Funding Program and 5 Contacts
+# Within the Funding Program, there will be 5 Funding Requests 
+# The 5 Funding Requests will each have a random number of Disbursements
+
+# Run this to generate data in a QA scratch org:
+# cci task run generate_and_load_from_yaml --generator_yaml ../snowfakery/OBF_basic.recipe.yml --num_records 10 --num_records_tablename outfunds__Funding_Program__c --org qa
+
+# Run this to generate records in an output:
+# snowfakery ./OBF_basic.recipe.yml --output-format=json --output-file=foo.json
+
+# First, let's create the Funding Program
+- object: outfunds__Funding_Program__c
+  nickname: FundingProgram
+  count: 1
+  fields:
+    Name: ${{fake.word}} Funding Program
+    outfunds__Start_Date__c:
+      date_between:
+        start_date: -8M
+        end_date: -7M
+    outfunds__Status__c: In progress
+    outfunds__Description__c: ${{fake.text(max_nb_chars=200)}}
+    outfunds__Total_Program_Amount__c: 
+      random_number:
+        min: 60000
+        max: 120000
+
+# Now let's create the 5 Contacts
+- object: Contact
+  nickname: Contact
+  count: 5
+  fields: 
+    FirstName:
+      fake: first_name
+    LastName:
+      fake: last_name
+    HomePhone:
+      fake: phone_number
+    MobilePhone:
+      fake: phone_number
+    Email:
+      fake: email
+    MailingStreet:
+      fake: street_address
+    MailingCity:
+      fake: city
+    MailingState:
+      fake: state
+    MailingPostalCode:
+      fake: postalcode
+    MailingCountry: USA
+
+# Now let's create the 5 Funding Requests
+- object: outfunds__Funding_Request__c
+  nickname: FundingRequest
+  count: 5
+  fields:
+    Name: ${{fake.word}} Funding Request
+    outfunds__FundingProgram__c:
+      reference: FundingProgram
+    outfunds__Application_Date__c:
+      date_between:
+        start_date: -6M
+        end_date: -1M
+    outfunds__Status__c: Awarded
+    outfunds__Requested_Amount__c:
+      random_choice:
+        - 5000
+        - 7000
+        - 8000
+        - 10000
+        - 12000 
+    outfunds__Recommended_Amount__c:
+      if:
+        - choice:
+            when: ${{outfunds__Requested_Amount__c>=10000}}
+            pick:
+              random_number:
+                min: 10000
+                max: 11000
+        - choice:
+            pick:
+              random_number:
+                min: 5000
+                max: 9000
+    outfunds__Awarded_Amount__c: ${{outfunds__Recommended_Amount__c + 100}}
+    outfunds__Awarded_Date__c: ${{ date(outfunds__Application_Date__c) + relativedelta(weeks=2)}}
+    outfunds__Applying_Contact__c:
+      random_reference: Contact
+  
+  # Now we can create the Disbursements for each Funding Request
+  friends:
+    - var: num_disbursements # first we need a random number 
+      value:
+        random_number:
+          min: 2
+          max: 10
+    - object: outfunds__Disbursement__c # now we can create the Disbursement record
+      count: ${{num_disbursements}}
+      nickname: Disbursement
+      fields:
+        outfunds__Funding_Request__c:
+          reference: FundingRequest
+        outfunds__Amount__c: ${{FundingRequest.outfunds__Awarded_Amount__c / num_disbursements}}
+        outfunds__Scheduled_Date__c: ${{date(FundingRequest.outfunds__Awarded_Date__c) + relativedelta(months=child_index)}}
+        outfunds__Status__c:
+          random_choice:
+            - Scheduled
+            - Approved
+            - Paid
+            - Cancelled
+        outfunds__Disbursement_Date__c:
+          if:
+            - choice:
+                when: ${{outfunds__Status__c=='Paid' and date(outfunds__Scheduled_Date__c)<today}}
+                pick: ${{outfunds__Scheduled_Date__c}}
+            - choice:
+                when: ${{outfunds__Status__c=='Paid' and date(outfunds__Scheduled_Date__c)>=today}}
+                pick: ${{date(today)}}
+            - choice:
+                pick: null
+        outfunds__Disbursement_Method__c:
+          if:
+            - choice:
+                when: ${{outfunds__Status__c=='Paid'}}
+                pick:
+                  random_choice:
+                    - Cash
+                    - Check
+                    - EFT
+            - choice:
+                pick: null
+      
+
