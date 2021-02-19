@@ -93,6 +93,7 @@
       fake: phone_number
     # ReportsToId:
     #   reference: BossContact # you need to have defined this Contact elsewhere
+    hed__PreferredPhone__c: "Mobile Phone"
     Email:
       fake: email
     Title:
