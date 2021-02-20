@@ -54,16 +54,19 @@ To load snowfakery data into a Salesforce org, you also need to install the Sale
    ```
 
 1. Assign account record types to Admin profile
-The sample recipe in this repo creates account records using record types that are common in a unversity context. The admin profile does not have access to these record types by default. Navigate to the System Admininistrator profile and assign all of the Account object record types to the profile.
+   The sample recipe in this repo creates account records using record types that are common in a unversity context. The admin profile does not have access to these record types by default. Navigate to the System Admininistrator profile and assign all of the Account object record types to the profile.
 
 1. Load the sample data from the snowfakery 
    ```
    # example below assumes the snowfakery recipe is located datasets/eda_objects.yml
    cci task run generate_and_load_from_yaml -o generator_yaml datasets/eda_objects.yml --org dev
    ```
-### Generate Data in a Sandbox 
 
-
+1. Open the scratch org and view data
+   ```
+   cci org browser dev
+   ```
+   
 ## Resources
 - [Snowfakery docs](https://snowfakery.readthedocs.io/en/stable/)
 - [CumulusCI docs](https://cumulusci.readthedocs.io/en/latest/)
