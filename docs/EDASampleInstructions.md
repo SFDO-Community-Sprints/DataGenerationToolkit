@@ -28,6 +28,8 @@ These instructions explain how to create sample data using for EDA objects using
    snowfakery snowfakery_samples/EDA/eda_objects.yml
    ```
 
+Note that the `eda_objects.yml` recipe is dependent on the `eda_macros.yml` file in the same directory. Be sure to copy both and save in the same directory if copying to a new project.   
+
 ## Generate Data in a Salesforce Org
 To load snowfakery data into a Salesforce org, you also need to install the Salesforce CLI and CumulusCI and connect to a Salesforce Dev Hub org. Follow this [Trailhead module](https://trailhead.salesforce.com/content/learn/modules/cumulusci-setup) to get set up. 
 
@@ -46,14 +48,19 @@ To load snowfakery data into a Salesforce org, you also need to install the Sale
 1. Create a new scratch org with EDA installed using CumulusCI
    ```
    cci flow run dev_org --org dev
+
+   #note that the following task is optional, but useful as it will add FLS and OLS to the admin profile for EDA objects
+   cci task run update_admin_profile --org dev 
    ```
+
+1. Assign account record types to Admin profile
+The sample recipe in this repo creates account records using record types that are common in a unversity context. The admin profile does not have access to these record types by default. Navigate to the System Admininistrator profile and assign all of the Account object record types to the profile.
 
 1. Load the sample data from the snowfakery 
    ```
-   # example below assumes the snowfakery recipe is located datasets/simple.yml
-   cci task run generate_and_load_from_yaml -o generator_yaml datasets/simple.yml --org dev
+   # example below assumes the snowfakery recipe is located datasets/eda_objects.yml
+   cci task run generate_and_load_from_yaml -o generator_yaml datasets/eda_objects.yml --org dev
    ```
-
 ### Generate Data in a Sandbox 
 
 
