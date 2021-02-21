@@ -66,7 +66,35 @@ To load snowfakery data into a Salesforce org, you also need to install the Sale
    ```
    cci org browser dev
    ```
-   
+
+### Generate Data in a Sandbox 
+
+1. Navidate to the project folder
+
+1. Initialize CumulusCI configuration in the project
+
+   ```
+   cci project init
+   ```
+
+1. Add a snowfakery recipe to the datasets directory
+
+1. Connect CumulusCI to the sandbox environment
+   ```
+   cci org connect <sandbox_name> --sandbox
+   ```
+
+1. Load the sample data from the snowfakery 
+   ```
+   # example below assumes the snowfakery recipe is located datasets/eda_objects.yml
+   cci task run generate_and_load_from_yaml -o generator_yaml datasets/eda_objects.yml --org <sandbox_name>
+   ```
+
+1. Open the sandbox org and view data
+   ```
+   cci org browser <sandbox_name>
+   ```
+
 ## Resources
 - [Snowfakery docs](https://snowfakery.readthedocs.io/en/stable/)
 - [CumulusCI docs](https://cumulusci.readthedocs.io/en/latest/)
