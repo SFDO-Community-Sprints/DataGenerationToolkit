@@ -34,7 +34,7 @@ Note that the `eda_objects.yml` recipe is dependent on the `eda_macros.yml` file
 To load snowfakery data into a Salesforce org, you also need to install the Salesforce CLI and CumulusCI and connect to a Salesforce Dev Hub org. Follow this [Trailhead module](https://trailhead.salesforce.com/content/learn/modules/cumulusci-setup) to get set up. 
 
 ### Generate Data in a Scratch Org
-1. Navigate to the root folder of the project that is organized wtih source format.
+1. Navigate to the root folder of the project that is organized with source format.
 
 1. Initialize CumulusCI configuration in the project
 
@@ -48,15 +48,12 @@ To load snowfakery data into a Salesforce org, you also need to install the Sale
 1. Create a new scratch org with EDA installed using CumulusCI
    ```
    cci flow run dev_org --org dev
-
-   #note that the following task is optional, but useful as it will add FLS and OLS to the admin profile for EDA objects
-   cci task run update_admin_profile --org dev 
    ```
 
 1. Assign account record types to Admin profile
-   The sample recipe in this repo creates account records using record types that are common in a unversity context. The admin profile does not have access to these record types by default. Navigate to the System Admininistrator profile and assign all of the Account object record types to the profile.
+   The sample recipe in this repo creates account records using record types that are common in a unversity context. The admin profile does not have access to these record types by default in the scratch org. Navigate to the System Admininistrator profile and assign all of the Account object record types to the profile.
 
-1. Load the sample data from the snowfakery 
+1. Load the sample data from the snowfakery recipe
    ```
    # example below assumes the snowfakery recipe is located datasets/eda_objects.yml
    cci task run generate_and_load_from_yaml -o generator_yaml datasets/eda_objects.yml --org dev
@@ -69,7 +66,7 @@ To load snowfakery data into a Salesforce org, you also need to install the Sale
 
 ### Generate Data in a Sandbox 
 
-1. Navidate to the project folder
+1. Navigate to the project folder
 
 1. Initialize CumulusCI configuration in the project
 
@@ -84,7 +81,7 @@ To load snowfakery data into a Salesforce org, you also need to install the Sale
    cci org connect <sandbox_name> --sandbox
    ```
 
-1. Load the sample data from the snowfakery 
+1. Load the sample data from the snowfakery recipe
    ```
    # example below assumes the snowfakery recipe is located datasets/eda_objects.yml
    cci task run generate_and_load_from_yaml -o generator_yaml datasets/eda_objects.yml --org <sandbox_name>
