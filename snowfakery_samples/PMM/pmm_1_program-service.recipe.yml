@@ -246,8 +246,8 @@
     Name: Session ${{Contact.LastName}} ${{pmdm__Program__c}} ${{fake.date}}
 
             # Custom Fields
-    pmdm__SessionEnd__c: <<fake.date>>T<<fake.time>>Z  # gets an error with DateTime formatting with ${{fake.date_time}}
-    pmdm__SessionStart__c: <<fake.date>>T<<fake.time>>Z
+    pmdm__SessionEnd__c: ${{fake.date_between(start_date='today',end_date='+10w')}}T${{fake.time}}Z  # gets an error with DateTime formatting with ${{fake.date_time}}
+    pmdm__SessionStart__c: ${{fake.date_between(start_date='-10w',end_date='today')}}T${{fake.time}}Z
     pmdm__Status__c:
       random_choice:
         - Pending
