@@ -1,28 +1,26 @@
+### This recipe creates reference Account record for PMM data
 # Look at examples/salesforce/Account.recipe.yml for more examples.
 
 # Run this like this:
 
-# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/PMM/pmm_0_Account.recipe.yml --num_records 300 --num_records_tablename Contact --org qa
-# snowfakery snowfakery_samples/PMM/pmm_0_Account.recipe.yml --output-format json --output-file src/json.json
+# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/PMM/pmm_0_Account.recipe.yml --num_records 300 --num_records_tablename Account --org qa
+# snowfakery snowfakery_samples/PMM/pmm_0_Account.recipe.yml --output-format json --output-file src/foo.json
 
-- object: Account
-  nickname: Household
+# Set Macro for Household and Organization Record Type
+- macro: AccountHousehold
   fields:
-    name:
-      fake: last_name
     RecordType: HH_Account
 
-- object: Account
-  nickname: Company
+- macro: AccountOrganization
   fields:
-    name:
-      fake: company
+    name: ${{fake.text(max_nb_chars=10)}} company
     RecordType: Organization
 
 - object: Account
+  include: AccountHousehold
+  count: 2
   fields:
-    name:
-      fake: last_name
+    name: ${{fake.first_name}} ${{fake.last_name}} Household
     Description:
       fake: catch_phrase
     NumberOfEmployees:
@@ -126,10 +124,10 @@
 - object: npsp__Address__c
   just_once: True
   fields:
-    npsp__MailingStreet__c: 36624 Jefferson Way Way
-    npsp__MailingCity__c: Greenville
-    npsp__MailingPostalCode__c: 63102
-    npsp__MailingState__c: OR
+    npsp__MailingStreet__c: ${{fake.street_address}}
+    npsp__MailingCity__c: ${{fake.city}}
+    npsp__MailingPostalCode__c: ${{fake.postcode}}
+    npsp__MailingState__c: ${{fake.state_abbr}}
     npsp__Address_Type__c: Home
     npsp__Household_Account__c:
-      reference: Household
+      random_reference: Account

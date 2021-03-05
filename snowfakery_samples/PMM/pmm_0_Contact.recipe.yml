@@ -1,17 +1,18 @@
-## NPSP Contacts Example
+### This recipe creates reference Contact record for PMM data
 
 # To run this code against a fresh scratch org called ("qa"):
 #
 # cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/PMM/pmm_0_Contact.recipe.yml --num_records 300 --num_records_tablename Contact --org qa
-# snowfakery snowfakery_samples/PMM/pmm_0_Contact.recipe.yml --output-format json --output-file src/json.json
+# snowfakery snowfakery_samples/PMM/pmm_0_Contact.recipe.yml --output-format json --output-file src/foo.json
 
 # Look at examples/salesforce/Contact.recipe.yml for more examples.
 - include_file: pmm_0_Account.recipe.yml
 
 - object: Contact
+  count: 2
   fields:
     AccountId:
-      reference: Account
+      random_reference: Account
     FirstName:
       fake: last_name
     LastName:
@@ -148,16 +149,14 @@
         - Dr.
         - Prof.
     OtherStreet:
-      fake.text:
-        max_nb_chars: 100
+      fake: street_address
     OtherCity:
       fake: city
     OtherState:
-      fake: state
+      fake: state_abbr
     OtherPostalCode:
       fake: postalcode
-    OtherCountry:
-      fake: country
+    OtherCountry: US
     OtherLatitude:
       fake: latitude
     OtherLongitude:
@@ -176,16 +175,14 @@
         - State
         - Unknown
     MailingStreet:
-      fake.text:
-        max_nb_chars: 100
+      fake: street_address
     MailingCity:
       fake: city
     MailingState:
-      fake: state
+      fake: state_abbr
     MailingPostalCode:
       fake: postalcode
-    MailingCountry:
-      fake: country
+    MailingCountry: US
     MailingLatitude:
       fake: latitude
     MailingLongitude:
@@ -220,8 +217,7 @@
     Email:
       fake: email
     Title:
-      fake.text:
-        max_nb_chars: 100
+      fake: job
     Department:
       fake.text:
         max_nb_chars: 80

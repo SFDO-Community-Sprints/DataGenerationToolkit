@@ -1,24 +1,27 @@
 # ORDER OF INSERT
-# 1-0. Account 
-# 1-1. Contact
-# 1-2. Relationship
-# 1-3. Afilliation
 
-## ---- Be aware of custom validation rules
+### ------------- [ Set Reference Account and Contact]------------ #
+# 1-0. Account
+# 1-1. Address
+# 1-2. Contact
+
+### ------------- [ Set 1 Program | 2 Program Cohort | 2 Program Engagement ]------------ #
 # 2-0. Program__c
 # 2-1. ProgramCohort__c
 # 2-2. ProgramEngagement__c
 
+### ------------- [ Set 1 Service | 2 Service Schedule | 2 Service Session | 1 Service Participant | 1 Service Delivery ]------------ #
 # 3-0. Service__c
 # 3-1. ServiceSchedule__c
 # 3-2. ServiceSession__c
 # 3-3. ServiceParticipant__c
 # 3-4. ServiceDelivery__c
 
+
 # Run this like this:
 
-# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/PMM/pmm_1_program-service.recipe.yml --num_records 300 --num_records_tablename pmdm__Program__c --org qa
-# snowfakery snowfakery_samples/PMM/pmm_1_program-service.recipe.yml --output-format json --output-file src/json.json
+# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/PMM/pmm_1_program-service-flat.recipe.yml --num_records 300 --num_records_tablename pmdm__Program__c --org qa
+# snowfakery snowfakery_samples/PMM/pmm_1_program-service.recipe.yml --output-format json --output-file src/foo.json
 
 # import account and contact recipes
 # along with included-files
@@ -27,10 +30,9 @@
 # Programs
 - object: pmdm__Program__c
   nickname: Program
-  #just_once: True
   count: 1
   fields: # Standard Fields
-    Name: ${{fake.text(max_nb_chars=15)}} Program
+    Name: ${{fake.text(max_nb_chars=10)}} Program
 
       # Custom Fields
     pmdm__Description__c:
@@ -67,82 +69,76 @@
         max_nb_chars: 200
 
 # Program Cohort
-  friends:
-  - object: pmdm__ProgramCohort__c
-    count: 2
-    nickname: Program Cohort
-    fields:
+- object: pmdm__ProgramCohort__c
+  count: 2
+  nickname: Program Cohort
+  fields:
         # Standard Fields
-      Name: ${{fake.text(max_nb_chars=10)}} ${{random_number(1,4)}} Cohort
-        # Custom Fields
-      pmdm__Description__c:
-        fake.text:
-          max_nb_chars: 200
-
-      pmdm__EndDate__c:
-        date_between:
-          start_date: today
-          end_date: +1m
-
-      pmdm__StartDate__c:
-        date_between:
-          start_date: -1m
-          end_date: today
-
-      pmdm__Status__c: # customize picklist values
-        random_choice:
+    Name: ${{fake.text(max_nb_chars=10)}} ${{random_number(1,4)}} Cohort
+        # Custom Fields      
+    pmdm__Description__c:        
+      fake.text:
+        max_nb_chars: 200
+    pmdm__EndDate__c:
+      date_between:
+        start_date: today
+        end_date: +1m
+    pmdm__StartDate__c:
+      date_between:
+        start_date: -1m
+        end_date: today
+    pmdm__Status__c: # customize picklist values
+      random_choice:
           - Planned
           - Active
           - Completed
           - Canceled
       # Reference fields
-      pmdm__Program__c:
-        reference: Program
-
+    pmdm__Program__c:
+      reference: pmdm__Program__c
   # Program Engagement
-    friends:
-    - object: pmdm__ProgramEngagement__c
-      count: 3
-      nickname: Program Engagement
-      fields: # Standard Fields
-        Name: ${{Contact.FirstName}} ${{Contact.LastName}} ${{random_number(1,10)}} Engagement
+- object: pmdm__ProgramEngagement__c
+  count: 2
+  nickname: Program Engagement
+  fields: # Standard Fields
+    Name: ${{Contact.FirstName}} ${{Contact.LastName}} ${{random_number(1,10)}} Engagement
 
         # Custom Fields
-        pmdm__ApplicationDate__c:
-          date_between:
-            start_date: -1y
-            end_date: today
-        pmdm__AutoName_Override__c: false          
-        pmdm__EndDate__c:
-          date_between:
-            start_date: today
-            end_date: +1m      
-        pmdm__Role__c:
-          random_choice:
-            - Client
-            - Volunteer
-            - Service Provider      
-        pmdm__Stage__c:
-          random_choice:
-            - Applied
-            - Application Denied
-            - Waitlisted
-            - Enrolled
-            - Active
-            - Completed
-            - Withdrawn      
-        pmdm__StartDate__c:
-          date_between:
-            start_date: -1m
-            end_date: today
-        pmdm__Account__c:
-            reference: Household  # npsp Household | standard Account
-        pmdm__Contact__c:
-            reference: Contact # for anonymounse client, Don not fill in.
-        pmdm__Program__c:
-            reference: Program
-        pmdm__ProgramCohort__c:
-            reference: Program Cohort
+    pmdm__ApplicationDate__c:
+      date_between:
+        start_date: -1y
+        end_date: today
+    pmdm__AutoName_Override__c: false          
+    pmdm__EndDate__c:
+      date_between:
+        start_date: today
+        end_date: +1m      
+    pmdm__Role__c:
+      random_choice:
+        - Client
+        - Volunteer
+        - Service Provider      
+    pmdm__Stage__c:
+      random_choice:
+        - Applied
+        - Application Denied
+        - Waitlisted
+        - Enrolled
+        - Active
+        - Completed
+        - Withdrawn      
+    pmdm__StartDate__c:
+      date_between:
+        start_date: -1m
+        end_date: today
+    pmdm__Account__c:
+        random_reference: Account  # npsp Household | standard Account
+    pmdm__Contact__c:
+        reference: Contact # for anonymounse client, Don not fill in.
+    pmdm__Program__c:
+        random_reference: pmdm__Program__c
+    pmdm__ProgramCohort__c:
+        random_reference: pmdm__ProgramCohort__c
   # Service
 - object: pmdm__Service__c
   just_once: true
@@ -168,194 +164,160 @@
         - sessions
         - deliveries
         - kits
-
         # Custom Lookup Fields
     pmdm__Program__c:
-            reference: Program
+            random_reference: pmdm__Program__c
 
   # Service Schedule
-  friends:
-  - object: pmdm__ServiceSchedule__c
-    count: 3
-    nickname: Service Schedule
-    fields:
+- object: pmdm__ServiceSchedule__c
+  count: 2
+  nickname: Service Schedule
+  fields:
           # Standard Fields
-      Name: ${{pmdm__ProgramEngagement__c.Name}} ${{fake.date}} 
-
+    Name: ${{pmdm__ProgramEngagement__c.Name}} ${{fake.date}} Schedule
           # Custom Fields
-      pmdm__AllDay__c:
-        random_choice:
-          - choice:
-              probability: 50%
-              pick: true
-          - choice:
-              probability: 50%
-              pick: false
-
-      pmdm__CreateServiceSessionRecords__c: # TRUE -trigger a creation of service session record
-        random_choice:
-          - choice:
-              probability: 50%
-              pick: true
-          - choice:
-              probability: 50%
-              pick: false
-
-      pmdm__DaysOfWeek__c:
-        random_choice:  # how to set up multi-picklist? # restriced API name
-          - 1
-          - 2
-          - 3
-          - 4
-          - 5
-          - 6
-          - 7
-
-#      pmdm__FirstSessionEnd__c:   -------- getting error!!
-#        datetime:
-#            year: 2020
-#            month: 04
-#            day: 25
-#            hour: 0
-#            minute: 0
-#            second: 0
-#            microsecond: 0
-
-#      pmdm__FirstSessionStart__c: now
-
-      pmdm__Frequency__c:
-        random_choice:
-          - Daily
-          - Weekly
-          - Monthly
-          - One Time
-
-      pmdm__Interval__c:
-        random_number:
-          min: 1
-          max: 7
-
-      pmdm__NumberOfServiceSessions__c:
-        random_number:
-          min: 1
-          max: 10
-
-      pmdm__ParticipantCapacity__c:
-        random_number:
-          min: 1
-          max: 10
-
-      pmdm__ServiceScheduleEndDate__c:
-        fake.date_between:
-          start_date: -1m
-          end_date: +1m
-
-      pmdm__ServiceScheduleEnds__c:
-        random_choice:
-          - ${{'On'}}  # 'On' is a reserved word for boolean 1, or True
-          - After
-
+    pmdm__AllDay__c:
+      random_choice:
+        - choice:
+            probability: 50%
+            pick: true
+        - choice:
+            probability: 50%
+            pick: false
+    pmdm__CreateServiceSessionRecords__c: # TRUE -trigger a creation of service session record
+      random_choice:
+        - choice:
+            probability: 50%
+            pick: true
+        - choice:
+            probability: 50%
+            pick: false
+    pmdm__DaysOfWeek__c:
+      random_choice:  # picklist value API name
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7   
+    pmdm__FirstSessionStart__c: ${{fake.date_between(start_date='-10d',end_date='today')}}T${{fake.time}}Z
+    pmdm__FirstSessionEnd__c: ${{fake.date_between(start_date='today',end_date='+1w')}}T${{fake.time}}Z
+    pmdm__Frequency__c:
+      random_choice:
+        - Daily
+        - Weekly
+        - Monthly
+        - One Time
+    pmdm__Interval__c:
+      random_number:
+        min: 1
+        max: 7
+    pmdm__NumberOfServiceSessions__c:
+      random_number:
+        min: 1
+        max: 10
+    pmdm__ParticipantCapacity__c:
+      random_number:
+        min: 1
+        max: 10
+    pmdm__ServiceScheduleEndDate__c:
+      fake.date_between:
+        start_date: -1m
+        end_date: +1m
+    pmdm__ServiceScheduleEnds__c:
+      random_choice:
+        - ${{'On'}}  # 'On' is a reserved word for boolean 1, or True
+        - After
           # Custom Lookup Fields
-      pmdm__PrimaryServiceProvider__c:
-        reference: Contact
-      pmdm__OtherServiceProvider__c:
-        reference: Contact
-      pmdm__Service__c:
-        reference: Service
+    pmdm__PrimaryServiceProvider__c:
+      random_reference: Contact
+    pmdm__OtherServiceProvider__c:
+      random_reference: Contact
+    pmdm__Service__c:
+      reference: pmdm__Service__c
 
     # Service Session
-    friends:
-    - object: pmdm__ServiceSession__c
-      count: 3
-      nickname: Service Session
-      fields: 
+- object: pmdm__ServiceSession__c
+  count: 2
+  nickname: Service Session
+  fields: 
             # Standard Fields
-        Name: ${{Contact.FirstName}} ${{Contact.LastName}} ${{pmdm__Program__c}} ${{fake.date}}
+    Name: Session ${{Contact.LastName}} ${{pmdm__Program__c}} ${{fake.date}}
 
             # Custom Fields
-        pmdm__SessionEnd__c: <<fake.date>>T<<fake.time>>Z
-
-        pmdm__SessionStart__c: <<fake.date>>T<<fake.time>>Z
-
-        pmdm__Status__c:
-          random_choice:
-            - Pending
-            - Completed
-            - Canceled
-
+    pmdm__SessionEnd__c: ${{fake.date_between(start_date='today',end_date='+10w')}}T${{fake.time}}Z  # gets an error with DateTime formatting with ${{fake.date_time}}
+    pmdm__SessionStart__c: ${{fake.date_between(start_date='-10w',end_date='today')}}T${{fake.time}}Z
+    pmdm__Status__c:
+      random_choice:
+        - Pending
+        - Completed
+        - Canceled
             # Custom Lookup Fields
-        pmdm__PrimaryServiceProvider__c:
-          reference: Contact
-        pmdm__OtherServiceProvider__c:
-          reference: Contact
-        pmdm__ServiceSchedule__c:
-          reference: Service Schedule
+    pmdm__PrimaryServiceProvider__c:
+      random_reference: Contact
+    pmdm__OtherServiceProvider__c:
+      random_reference: Contact
+    pmdm__ServiceSchedule__c:
+      reference: pmdm__ServiceSchedule__c
 
-      # Service Participant
-      friends:
-      - object: pmdm__ServiceParticipant__c
-        count: 1
-        nickname: Service Participant
-        fields:
-              # Standard Fields
-          Name: ${{Contact.FirstName}} ${{Contact.LastName}} ${{pmdm__ServiceSchedule__c.Name}}
-
-              # Custom Fields
-          pmdm__SignUpDate__c:
-            fake.date_between:
-              start_date: -5m
-              end_date: +5m
-              
-          pmdm__Status__c:
-            random_choice:
-              - Waitlisted
-              - Enrolled
-              - Withdrawn
-              # Custom Lookup Fields
-          pmdm__Contact__c:
-            reference: Contact
-          pmdm__ProgramEngagement__c:
-            reference: Program Engagement
-          pmdm__Service__c:
-            reference: Service
-          pmdm__ServiceSchedule__c:
-            reference: Service Schedule
-
+    # Service Participant
+- object: pmdm__ServiceParticipant__c
+  count: 1
+  nickname: Service Participant
+  fields:
+            # Standard Fields
+    Name: Service Participant Info ${{pmdm__ServiceSchedule__c.Name}}
+            # Custom Fields
+    pmdm__SignUpDate__c:
+      fake.date_between:
+        start_date: -5m
+        end_date: +5m              
+    pmdm__Status__c:
+      random_choice:
+        - Waitlisted
+        - Enrolled
+        - Withdrawn
+            # Custom Lookup Fields
+    pmdm__Contact__c:
+      reference: Contact
+    pmdm__ProgramEngagement__c:
+      reference: pmdm__ProgramEngagement__c
+    pmdm__Service__c:
+      reference: pmdm__Service__c
+    pmdm__ServiceSchedule__c:
+      reference: pmdm__ServiceSchedule__c
 # ServiceDelivery__c
-  - object: pmdm__ServiceDelivery__c
-    count: 3
-    nickname: Service Delivery 
-    fields:
-          # Standard Fields
-      Name: ${{Contact.FirstName}} ${{Contact.LastName}} ${{fake.date}} Delivery
-
-          # Custom Fields
-      pmdm__AutonameOverride__c:
-        random_choice:
-          - choice:
-              probability: 50%
-              pick: true
-          - choice:
-              probability: 50%
-              pick: false
-      pmdm__DeliveryDate__c: ${{fake.date}}
-      pmdm__Quantity__c:
-        random_number:
-          min: 1
-          max: 2
-
-          # Custom Lookup Fields
-      pmdm__Service__c:
-        reference: Service
-      pmdm__Account__c:
-        reference: Household 
-      pmdm__Contact__c:
-        reference: Contact
-#      pmdm__Contact__c:
-#        reference: ----------------- How can I connect primary contact from Account?
-      pmdm__ProgramEngagement__c:
-        reference: Program Engagement
-      pmdm__Service_Provider__c:
-        reference: Contact
-      pmdm__ServiceSession__c:
-        reference: Service Session
+- object: pmdm__ServiceDelivery__c
+  count: 1
+  nickname: Service Delivery 
+  fields:
+        # Standard Fields
+    Name: ${{Contact.FirstName}} ${{Contact.LastName}} ${{fake.date}} Delivery
+        # Custom Fields
+    pmdm__AutonameOverride__c:
+      random_choice:
+        - choice:
+            probability: 50%
+            pick: true
+        - choice:
+            probability: 50%
+            pick: false
+    pmdm__DeliveryDate__c: ${{fake.date}}
+    pmdm__Quantity__c:
+      random_number:
+        min: 1
+        max: 2
+        # Custom Lookup Fields
+    pmdm__Service__c:
+      reference: pmdm__Service__c
+    pmdm__Account__c:
+      random_reference: Account 
+    pmdm__Contact__c:
+      random_reference: Contact
+    pmdm__ProgramEngagement__c:
+      random_reference: pmdm__ProgramEngagement__c
+    pmdm__Service_Provider__c:
+      random_reference: Contact
+    pmdm__ServiceSession__c:
+      random_reference: pmdm__ServiceSession__c
