@@ -1,3 +1,11 @@
+# To run this recipe from a cci project, save this file and eda_macros.yml
+# into the datasets folder and run this command from the project folder:
+#
+# cci task run generate_and_load_from_yaml \
+#     -o generator_yaml datasets/eda_objects.yml --org ORGNAME
+#
+# where ORGNAME identifies the org you want to load data into.
+
 # most of the declarations are actually in the macro file
 - include_file: eda_macros.yml
 
@@ -16,9 +24,9 @@
   count: 10
   fields:
     LastName:
-      fake: first_name
+      fake: FirstName
     FirstName:
-      fake: last_name
+      fake: LastName
     Salutation:
       random_choice:
         Mr.: 40%
@@ -95,15 +103,14 @@
     #   reference: BossContact # you need to have defined this Contact elsewhere
     hed__PreferredPhone__c: "Mobile Phone"
     Email:
-      fake: email
+      fake: Email
     Title:
       fake.text:
         max_nb_chars: 100
     Department:
       fake.text:
         max_nb_chars: 80
-    AssistantName:
-      fake: name
+    AssistantName: "${{fake.FirstName}} ${{fake.LastName}}"
     LeadSource:
       random_choice:
         - Web
