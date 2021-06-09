@@ -1,0 +1,281 @@
+########## Contact Macros - Locale ##########
+
+- macro: International_Contacts 
+  fields:
+    __locale:
+      random_choice:
+        - en_GB   # English (Great Britain)
+        - ja_JP   # Japanese (Japan)
+        - en_AU   # English (Australia)
+        - fr_FR   # French (France)
+        - fr_CA   # French (Canada)
+        - es_ES   # Spanish (Spain)
+        - es_MX   # Spanish (Mexico)
+
+    FirstName:
+      i18n_fake:
+        fake: first_name
+        locale: ${{__locale}}
+    LastName:
+      i18n_fake:
+        fake: last_name
+        locale: ${{__locale}}
+    Description: ${{__locale}}      #The selected Locale used to create the Contact is added to the description field for clarity
+    MailingStreet:                  
+      i18n_fake:
+        fake: street_address
+        locale: ${{__locale}}
+    MailingCity:
+      i18n_fake:
+        fake: city
+        locale: ${{__locale}}
+    MailingState:
+      if:
+        - choice:
+            when: ${{__locale=='en_AU'}}
+            pick:
+              i18n_fake:
+                fake: state
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='ja_JP'}}
+            pick:
+              i18n_fake:
+                fake: prefecture
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='en_GB'}}
+            pick:
+              i18n_fake:
+                fake: county
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='fr_FR'}}
+            pick:
+              i18n_fake:
+                fake: administrative_unit
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='fr_CA'}}
+            pick:
+              i18n_fake:
+                fake: administrative_unit
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='es_ES'}}
+            pick:
+              i18n_fake:
+                fake: state
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='es_MX'}}
+            pick:
+              i18n_fake:
+                fake: administrative_unit
+                locale: ${{__locale}}
+    MailingPostalCode:
+      i18n_fake:
+        fake: postcode
+        locale: ${{__locale}}
+    MailingCountry:
+      i18n_fake:
+        fake: country
+        locale: ${{__locale}}
+    Phone:
+      i18n_fake:
+        fake: phone_number
+        locale: ${{__locale}}
+
+########## Organization Accounts ##########
+
+- object: Account
+  nickname: organization_accounts
+  fields:
+    __locale:
+      random_choice:
+        - en_GB
+        - ja_JP
+        - en_AU
+        - fr_FR
+        - fr_QC
+        - es_ES
+        - es_MX
+    name:
+      i18n_fake:
+        fake: company
+        locale: ${{__locale}}
+    Description: ${{__locale}}
+    BillingStreet:
+      i18n_fake:
+        fake: street_address
+        locale: ${{__locale}}
+    BillingCity:
+      i18n_fake:
+        fake: city
+        locale: ${{__locale}}
+    BillingState:
+      if:
+        - choice:
+            when: ${{__locale=='en_AU'}}
+            pick:
+              i18n_fake:
+                fake: state
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='ja_JP'}}
+            pick:
+              i18n_fake:
+                fake: prefecture
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='en_GB'}}
+            pick:
+              i18n_fake:
+                fake: county
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='fr_FR'}}
+            pick:
+              i18n_fake:
+                fake: ''
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='fr_CA'}}
+            pick:
+              i18n_fake:
+                fake: state
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='es_ES'}}
+            pick:
+              i18n_fake:
+                fake: state
+                locale: ${{__locale}}
+        - choice:
+            when: ${{__locale=='es_MX'}}
+            pick:
+              i18n_fake:
+                fake: state
+                locale: ${{__locale}}
+    BillingPostalCode:
+      i18n_fake:
+        fake: postcode
+        locale: ${{__locale}}
+    BillingCountry:
+      i18n_fake:
+        fake: country
+        locale: ${{__locale}}
+
+########## Affiliation Dates ##########
+
+- macro: affiliation_info
+  fields:
+    npe5__StartDate__c:
+      date_between:
+        start_date: 1990-01-01
+        end_date: -30d
+    npe5__EndDate__c:
+      random_choice:
+        - choice:
+            probability: 75%
+            pick:
+              date_between:
+                start_date: -29d
+                end_date: -1d
+        - choice:
+            probability: 25%
+            pick: ~
+    npe5__Status__c:
+      if:
+        - choice:
+            when: ${{npe5__EndDate__c!=None }}
+            pick: Former
+        - choice:
+            when: ${{npe5__EndDate__c==None }}
+            pick: Current
+    npe5__Role__c:
+      i18n_fake:
+        fake: job
+        locale: ${{__locale}}
+    npe5__Primary__c: TRUE
+
+########## Relationships ##########
+
+- object: Contact
+  nickname: relationship_contacts
+  count: 2
+  include: International_Contacts
+  fields:
+    Email:
+      fake: safe_email
+
+
+########## General Accounting Units ##########
+
+- object: npsp__General_Accounting_Unit__c
+  nickname: GAU1
+  just_once: True
+  fields:
+    name: Snowfakery GAU 1 -- <<today>>
+
+- object: npsp__General_Accounting_Unit__c
+  nickname: GAU2
+  just_once: True
+  fields:
+    name: Snowfakery GAU 2 -- <<today>>
+
+- object: npsp__General_Accounting_Unit__c
+  nickname: GAU3
+  just_once: True
+  fields:
+    name: Snowfakery GAU 3 -- <<today>>
+
+
+########## Contacts ##########
+
+- object: Contact
+  fields:
+    Email:
+      fake: safe_email
+  include: International_Contacts
+  friends:
+    - object: npe5__Affiliation__c
+      include: affiliation_info
+      fields:
+        npe5__Contact__c:
+          reference: Contact
+        npe5__Organization__c:
+          reference: organization_accounts
+    - object: npe4__Relationship__c
+      fields:
+        npe4__Contact__c:
+          reference: Contact
+        npe4__RelatedContact__c:
+          reference: relationship_contacts
+        npe4__Status__c:
+          random_choice:
+            - choice:
+                probability: 50%
+                pick: Current
+            - choice:
+                probability: 50%
+                pick: Former
+        npe4__Type__c:
+          random_choice:
+            - Friend
+            - Family
+            - Coworker
+            - Father
+            - Mother
+            - Parent
+            - Son
+            - Daughter
+            - Child
+            - Aunt
+            - Uncle
+            - Partner
+            - Cousin
+
+
+
+
