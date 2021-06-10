@@ -1,5 +1,19 @@
 ## NPSP Opportunities with contact soft credits
 
+### ------------- [          ORDER OF INSERT         ]------------ ###
+# 1-0. Account (1)
+# 1-1. Contact + Opportunity + OpportunityContactRole (5)
+
+### ----------- [ Opportunity_npsp_soft_credit.recipe.yml Summary ]---------- ###
+# Create a set of 5 Opportunities with an Opportunity Contact Role and Contact under 1  Account.
+
+### ----------- [               CLI RUN                ]---------- ###
+
+# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/npsp/Opportunity_npsp_soft_credits.yml --org qa
+# snowfakery --output-format json --output-file src/foo.json snowfakery_samples/npsp/Opportunity_npsp_soft_credits.yml
+
+### ----------- [            Recipe Starts             ]---------- ###
+
 ## create an account
 - object: Account
   fields:
