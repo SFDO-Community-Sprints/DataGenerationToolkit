@@ -21,19 +21,19 @@
   nickname: GAU_GenOps
   fields:
     Name: General Operating Fund
-    Active__c: true
+    npsp__Active__c: true
 
 - object: npsp__General_Accounting_Unit__c
   nickname: GAU_Edu
   fields:
     Name: Education Fund
-    Active__c: true
+    npsp__Active__c: true
 
 - object: npsp__General_Accounting_Unit__c
   nickname: GAU_Animal
   fields:
     Name: Animal Fund
-    Active__c: true
+    npsp__Active__c: true
 
 
 ### Scenario 1: Create an Opportunity with 1 GAU Allocation at 100% of the Opportunity Amount
