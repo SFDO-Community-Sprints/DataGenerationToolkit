@@ -31,9 +31,9 @@
   count: 5
   fields: 
     FirstName:
-      fake: first_name
+      fake: FirstName
     LastName:
-      fake: last_name
+      fake: LastName
     HomePhone:
       fake: phone_number
     MobilePhone:
