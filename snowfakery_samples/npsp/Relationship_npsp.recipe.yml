@@ -1,0 +1,129 @@
+### ------------- [          ORDER OF INSERT         ]------------ ###
+# 1-0. Account (1)
+# 1-1. Contact (2)
+# 1-2. Relationship (1)
+
+### ----------- [ Relationship_npsp.recipe.yml Summary ]---------- ###
+# Create a set of 1 Relationship with 2 Contacts under 1 Houehold Account.
+# Required fields in the recipe:
+#     npe4__Contact__c (the first Contact)
+#     npe4__RelatedContact__c (the 2nd Contact)
+#     npsp__Related_Opportunity_Contact_Role__c
+#     npe4__Status__c
+#     npe4__Type__c
+# Contacts should include mix of Salutations so that relationships use the 3 variation types in npsp (i.e. female, male, neutral)
+
+### ----------- [               CLI RUN                ]---------- ###
+
+# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/npsp/Relationship_npsp.recipe.yml --num_records 300 --num_records_tablename npe4__Relationship__c --org qa
+# snowfakery --output-format json --output-file src/foo.json snowfakery_samples/npsp/Relationship_npsp.recipe.yml
+
+### ----------- [            Recipe Starts             ]---------- ###
+
+- object: Account # contacts are under one household record
+  count: 1
+  nickname: Household
+  fields:
+    name: The Household ${{child_index}}
+    RecordType: HH_Account
+
+- object: npe4__Relationship__c
+  count: 1
+  fields:
+    npe4__Type__c: # configure reciprocal relationship from npsp setting https://powerofus.force.com/s/article/NPSP-Manage-Relationships-Settings
+      random_choice:
+        - Aunt
+        - Child
+        - Cousin
+        - Daughter
+        - Employee
+        - Employer
+        - Father
+        - Grandchild
+        - Granddaughter
+        - Grandfather
+        - Grandmother
+        - Grandparent
+        - Grandson
+        - Husband
+        - Mother
+        - Parent
+        - Partner
+        - Son
+        - Uncle
+        - Wife
+    npsp__Related_Opportunity_Contact_Role__c:
+      random_choice: # add more Roles based on your org business requirements
+        - choice:
+            pick: Solicitor
+            probability: 20
+        - choice: 
+            pick: Soft Credit
+            probability: 70
+        - choice: 
+            pick: Tribute
+            probability: 10
+    npe4__Status__c:
+      if:
+        - choice:
+            when: ${{npsp__Related_Opportunity_Contact_Role__c !=('Employee','Employer')}} # You can set up additional 'Wife','Husband' and/or 'Partner' condition under Former status
+            pick: Current
+        - choice: 
+            pick: Former
+    npe4__Description__c: ${{npe4__Type__c}} - ${{fake.paragraph(nb_sentences=1)}}
+    npe4__Contact__c:
+      random_choice: # relate one Contact either male, female or nonbinary
+          - object: Contact
+            fields:
+              AccountId:
+                reference: Household
+              Salutation: ${{fake.prefix_nonbinary}}
+              FirstName: ${{fake.first_name_nonbinary}}
+              LastName: ${{fake.last_name_nonbinary}}
+
+          - object: Contact
+            fields:
+              AccountId:
+                reference: Household
+              Salutation: ${{fake.prefix_female}}
+              FirstName: ${{fake.first_name_female}}
+              LastName: ${{fake.last_name_female}}
+
+          - object: Contact
+            fields:
+              AccountId:
+                reference: Household
+              Salutation: ${{fake.prefix_male}}
+              FirstName: ${{fake.first_name_male}}
+              LastName: ${{fake.last_name_male}}
+
+    npe4__RelatedContact__c:
+      random_choice: # relate one Contact either male, female or nonbinary
+          - object: Contact
+            fields:
+              AccountId:
+                reference: Household
+              Salutation: ${{fake.prefix_nonbinary}}
+              FirstName: ${{fake.first_name_nonbinary}}
+              LastName: ${{fake.last_name_nonbinary}}
+
+          - object: Contact
+            fields:
+              AccountId:
+                reference: Household
+              Salutation: ${{fake.prefix_female}}
+              FirstName: ${{fake.first_name_female}}
+              LastName: ${{fake.last_name_female}}
+
+          - object: Contact
+            fields:
+              AccountId:
+                reference: Household
+              Salutation: ${{fake.prefix_male}}
+              FirstName: ${{fake.first_name_male}}
+              LastName: ${{fake.last_name_male}}
+            
+    # npe4__ReciprocalRelationship__c:
+    #   reference: npe4__Relationship__c
+    # ====== configure NPSP Reciprocal Relationship Setting ====== #
+    # https://powerofus.force.com/s/article/NPSP-Manage-Relationships-Settings
