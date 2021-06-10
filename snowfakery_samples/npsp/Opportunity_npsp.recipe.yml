@@ -171,7 +171,7 @@
     npsp__Notification_Recipient_Name__c:
       fake: name
     npsp__Previous_Grant_Opportunity__c:  #this may have a NPSP validation rule about being a date in the past
-      reference: Opportunity
+      reference: GrantOpportunity
     npsp__Primary_Contact_Campaign_Member_Status__c:
       fake.text:
         max_nb_chars: 40
