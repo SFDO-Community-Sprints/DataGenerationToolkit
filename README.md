@@ -123,7 +123,8 @@ To create an EDA-based scratch org from this repo:
 
 1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
 2. Run `cci flow run eda:trial_org --org dev` to deploy this project.
-3. Run `cci org browser dev` to open the org in your browser.
+3. Run `cci task run generate_and_load_from_yaml -o generator_yaml snowfakery_samples/EDA/eda_objects.yml --org dev` to load example data.
+4. Run `cci org browser dev` to open the org in your browser.
 
 To create an NPSP-based scratch org from this repo:
 
