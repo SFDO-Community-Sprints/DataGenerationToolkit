@@ -54,8 +54,15 @@
         - Wife
     npsp__Related_Opportunity_Contact_Role__c:
       random_choice: # add more Roles based on your org business requirements
-        - Soft Credit
-        - Solicitor
+        - choice:
+            pick: Solicitor
+            probability: 20
+        - choice: 
+            pick: Soft Credit
+            probability: 70
+        - choice: 
+            pick: Tribute
+            probability: 10
     npe4__Status__c:
       if:
         - choice:
