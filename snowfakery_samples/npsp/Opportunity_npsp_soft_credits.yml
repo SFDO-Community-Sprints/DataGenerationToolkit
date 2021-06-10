@@ -5,9 +5,9 @@
     count: 5
     fields:
       Firstname:
-        fake: first_name
+        fake: FirstName
       Lastname:
-        fake: last_name
+        fake: LastName
       npe01__AlternateEmail__c:
         fake: email
       npe01__HomeEmail__c:
