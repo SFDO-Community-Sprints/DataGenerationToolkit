@@ -1,59 +1,56 @@
 ## NPSP Opportunities with contact soft credits
 
-## create several contacts 
-  - object: Contact
-    count: 5
-    fields:
-      Firstname:
-        fake: FirstName
-      Lastname:
-        fake: LastName
-      npe01__AlternateEmail__c:
-        fake: email
-      npe01__HomeEmail__c:
-        fake: email
-      npe01__WorkEmail__c:
-        fake: email
-      npe01__WorkPhone__c:
-        fake: phone_number
-    
 ## create an account
-  - object: Account
-    fields:
-      name:
-        fake: company
-    
-##create opportunity for that account
-  - object: Opportunity
-    nickname: GrantOpportunity
-    fields:
-      Name: Grant Opportunity
-      Description: A Grant Opportunity
-      AccountId:
-        reference: Account
-      Amount:
-        random_number:
-          min: 1
-          max: 100000
-      CloseDate: 2021-10-10
-      StageName: 
-        random_choice:
-          Prospecting: 50%
-          Qualification: 50%
+- object: Account
+  fields:
+    name:
+      fake: company
 
-## create opportunity contact roles for above opportunity and contacts created earlier
-  - object: OpportunityContactRole
-    count: 5
-    fields:
-      OpportunityId:
-        reference: Opportunity
-      ContactId:
-        random_reference: Contact
-      Role:
-        random_choice:
-          Influencer: 20%
-          Solicitor: 20%
-          Decision Maker: 20%
-          Honoree: 20%
-          Donor: 20%
-          Grant Manager: 20%
+## create several contacts
+- object: Contact
+  count: 5
+  fields:
+    Firstname:
+      fake: FirstName
+    Lastname:
+      fake: LastName
+    npe01__AlternateEmail__c:
+      fake: email
+    npe01__HomeEmail__c:
+      fake: email
+    npe01__WorkEmail__c:
+      fake: email
+    npe01__WorkPhone__c:
+      fake: phone_number
+  friends:
+    - object: Opportunity # create opportunity to be linked with each contact
+      nickname: GrantOpportunity
+      fields:
+        Name: Grant Opportunity
+        Description: A Grant Opportunity
+        AccountId:
+          reference: Account
+        Amount:
+          random_number:
+            min: 1
+            max: 100000
+        CloseDate: 2021-10-10
+        StageName:
+          random_choice:
+            Prospecting: 50%
+            Qualification: 50%
+      friends:
+        - object: OpportunityContactRole # create opportunity contact role for each opportunity and contact
+          fields:
+            OpportunityId:
+              reference: Opportunity
+            ContactId:
+              random_reference: Contact
+            Role:
+              random_choice:
+                Influencer: 20%
+                Solicitor: 20%
+                Decision Maker: 20%
+                Honoree: 20%
+                Donor: 20%
+                Grant Manager: 20%
