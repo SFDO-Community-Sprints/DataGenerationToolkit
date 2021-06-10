@@ -116,3 +116,21 @@ We also keep a [complete list of contributors](https://github.com/SFDO-Community
 - [NPSP Data Dictionary](https://attain-projects.quip.com/yD1wAsdz1m1Q/NPSP-Public-Data-Dictionary)
 - [Wave Data Generator](https://github.com/ttse-sfdc/sfdc-wave-data-generator) (generates data for Salesforce org, and builds linkages between objects)
 - [JSON/YAML Editor](https://json-editor.github.io/json-editor/)
+
+## Development
+
+Choose one of the below CCI flows (not both!):
+
+To create an EDA-based scratch org from this repo:
+
+1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
+2. Run `cci flow run eda:trial_org --org dev` to deploy this project.
+3. Run `cci task run generate_and_load_from_yaml -o generator_yaml snowfakery_samples/EDA/eda_objects.yml --org dev` to load example data.
+4. Run `cci org browser dev` to open the org in your browser.
+
+To create an NPSP-based scratch org from this repo:
+
+1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
+2. Run `cci flow run npsp:install_prod --org dev` to deploy this project.
+3. Run `cci task run generate_and_load_from_yaml -o generator_yaml <INSERT YOUR YAML FILE NAME HERE> --org dev` to load example data.  For example, the YML file might be snowfakery_samples/npsp/Account_Soft_Credit_npsp.recipe.yml
+4. Run `cci org browser dev` to open the org in your browser.
