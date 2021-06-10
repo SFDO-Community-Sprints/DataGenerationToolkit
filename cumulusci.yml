@@ -8,6 +8,12 @@ project:
         default_branch: 'main/'
     source_format: sfdx
 
+sources:
+    eda:
+        github: https://github.com/SalesforceFoundation/EDA
+    npsp:
+        github: https://github.com/SalesforceFoundation/NPSP
+
 tasks:
     robot:
         options:
