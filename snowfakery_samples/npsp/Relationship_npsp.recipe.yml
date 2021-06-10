@@ -4,8 +4,8 @@
 # 1-2. Relationship (1)
 
 ### ----------- [ Relationship_npsp.recipe.yml Summary ]---------- ###
-# Create a set of 1 Relationship with 2 Contactsunder 1 Houehold Account.
-# Field to required in the recipe:
+# Create a set of 1 Relationship with 2 Contacts under 1 Houehold Account.
+# Required fields in the recipe:
 #     npe4__Contact__c (the first Contact)
 #     npe4__RelatedContact__c (the 2nd Contact)
 #     npsp__Related_Opportunity_Contact_Role__c
@@ -24,7 +24,7 @@
   count: 1
   nickname: Household
   fields:
-    name: The Household
+    name: The Household ${{child_index}}
     RecordType: HH_Account
 
 - object: npe4__Relationship__c
@@ -59,9 +59,9 @@
     npe4__Status__c:
       if:
         - choice:
-            when: ${{npsp__Related_Opportunity_Contact_Role__c !=('Employee','Employer')}} # It is very rare to have former relationship with family member
+            when: ${{npsp__Related_Opportunity_Contact_Role__c !=('Employee','Employer')}} # You can set up additional 'Wife','Husband' and/or 'Partner' condition under Former status
             pick: Current
-        - choice:
+        - choice: 
             pick: Former
     npe4__Description__c: ${{npe4__Type__c}} - ${{fake.paragraph(nb_sentences=1)}}
     npe4__Contact__c:
@@ -119,3 +119,4 @@
     # npe4__ReciprocalRelationship__c:
     #   reference: npe4__Relationship__c
     # ====== configure NPSP Reciprocal Relationship Setting ====== #
+    # https://powerofus.force.com/s/article/NPSP-Manage-Relationships-Settings
