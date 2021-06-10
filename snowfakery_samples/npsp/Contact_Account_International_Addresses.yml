@@ -3,7 +3,7 @@
 - macro: International_Contacts 
   fields:
     __locale:
-      random_choice:
+      random_choice:                # The choice made here for the locale means that the Contact's locale influenced fields will be from the same locale, when referenced
         - en_GB   # English (Great Britain)
         - ja_JP   # Japanese (Japan)
         - en_AU   # English (Australia)
@@ -29,7 +29,7 @@
       i18n_fake:
         fake: city
         locale: ${{__locale}}
-    MailingState:
+    MailingState:                   #Depending on the country, the "State" can potentially be "Prefecture" or "County", meaning we need additional logic to choose which fake data to insert
       if:
         - choice:
             when: ${{__locale=='en_AU'}}
@@ -53,8 +53,8 @@
             when: ${{__locale=='fr_FR'}}
             pick:
               i18n_fake:
-                fake: administrative_unit
-                locale: ${{__locale}}
+                fake: administrative_unit   #This reference, administrative_unit, is used to automatically choose state/county/prefecture/etc. as the value to be populated depending on country
+                locale: ${{__locale}}       #...meaning that we don't have to create long additional logic to determine the value to input in the field, snowfakery will choose the right one to insert for us
         - choice:
             when: ${{__locale=='fr_CA'}}
             pick:
@@ -86,7 +86,7 @@
         fake: phone_number
         locale: ${{__locale}}
 
-########## Organization Accounts ##########
+########## Organization Marcros - Locale ##########
 
 - object: Account
   nickname: organization_accounts
@@ -172,11 +172,11 @@
   fields:
     npe5__StartDate__c:
       date_between:
-        start_date: 1990-01-01
-        end_date: -30d
-    npe5__EndDate__c:
+        start_date: 1990-01-01          #Affiliations created can have this Start Date or later
+        end_date: -30d                  #the Start Date can be as recent as 30 days prior to the data generated date
       random_choice:
-        - choice:
+    npe5__EndDate__c:                   #For Affiliations, we don't want all of them to have an End Date if they are still active
+        - choice:                       #This logic chooses 75% of records have an end date between 1 and 29 days prior to date data generated
             probability: 75%
             pick:
               date_between:
@@ -184,20 +184,20 @@
                 end_date: -1d
         - choice:
             probability: 25%
-            pick: ~
+            pick: ~                     #This ~ indicates a null value to allow us to generate a blank in 25% of instances
     npe5__Status__c:
       if:
         - choice:
-            when: ${{npe5__EndDate__c!=None }}
+            when: ${{npe5__EndDate__c!=None }}      #This means "If there is a value in the End Date field, set status to 'Former'"
             pick: Former
         - choice:
-            when: ${{npe5__EndDate__c==None }}
-            pick: Current
+            when: ${{npe5__EndDate__c==None }}      #This means "If there is NOT a value in the End Date field, set status to 'Current'"
+            pick: Current                           #...this behaviour is in line with NPSP's handling of Affiliation records in Current vs. Former scenarios
     npe5__Role__c:
       i18n_fake:
         fake: job
         locale: ${{__locale}}
-    npe5__Primary__c: TRUE
+    npe5__Primary__c: TRUE              #The generated Affiliation record is marked as Primary for the associated Contact
 
 ########## Relationships ##########
 
@@ -212,6 +212,7 @@
 
 ########## General Accounting Units ##########
 
+  #This will generate 3 GAUs only, as we don't need the same number of GAU as we do Contacts and Accounts
 - object: npsp__General_Accounting_Unit__c
   nickname: GAU1
   just_once: True
@@ -237,10 +238,10 @@
   fields:
     Email:
       fake: safe_email
-  include: International_Contacts
+  include: International_Contacts     #The macro we referenced above with the locale-specific random choices for field values
   friends:
     - object: npe5__Affiliation__c
-      include: affiliation_info
+      include: affiliation_info       #The affiliation macro we referenced above to link Contacts and Accounts created
       fields:
         npe5__Contact__c:
           reference: Contact
@@ -253,7 +254,7 @@
         npe4__RelatedContact__c:
           reference: relationship_contacts
         npe4__Status__c:
-          random_choice:
+          random_choice:            #This random choice is to ensure a mix of Current and Former Relationship records
             - choice:
                 probability: 50%
                 pick: Current
