@@ -131,7 +131,7 @@ Once CCI has your schema and your data, you can move it into any sandbox, any ti
 ### Flow and/or Apex ###
 You could create Flows or write Apex classes that generate test data via a series of inserts and, where appropriate, loops. This process is similar to how developers create records to test their code, but in this case, the records you create stay in your database. Any Apex code you write becomes part of your Salesforce instance, so in order to deploy it, you have to meet test coverage requirements, and more. This solution can be very time-consuming and heavily org dependent.
 
-Using Flow, you can create a limited number (around 50) of highly customized Salesforce records that are ideal for certain use cases, particularly small datasets for training new staff.  Refer to [this article] (https://admin.salesforce.com/blog/2021/how-i-solved-this-populating-sandboxes-with-flow) for step-by-step instructions.
+Using Flow, you can create a limited number (around 50) of highly customized Salesforce records that are ideal for certain use cases, particularly small datasets for training new staff.  Refer to [this article](https://admin.salesforce.com/blog/2021/how-i-solved-this-populating-sandboxes-with-flow) for step-by-step instructions.
 
 Tip: When you load the data, Salesforce runs Validation Rules. So, make sure that your required fields are populated, your picklist values are accurate, and your test data is in good shape! This will ensure that your data is (1) upload-able and (2) good enough to test based on your org’s own data standards.
 
