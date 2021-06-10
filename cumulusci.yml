@@ -1,0 +1,31 @@
+minimum_cumulusci_version: '3.36.0'
+project:
+    name: DataGenerationToolkit
+    package:
+        name: DataGenerationToolkit
+        api_version: '50.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+sources:
+    eda:
+        github: https://github.com/SalesforceFoundation/EDA
+    npsp:
+        github: https://github.com/SalesforceFoundation/NPSP
+
+tasks:
+    robot:
+        options:
+            suites: robot/DataGenerationToolkit/tests
+            options:
+                outputdir: robot/DataGenerationToolkit/results
+
+    robot_testdoc:
+        options:
+            path: robot/DataGenerationToolkit/tests
+            output: robot/DataGenerationToolkit/doc/DataGenerationToolkit_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
