@@ -1,3 +1,9 @@
+# NPSP Data Import Recipe with new Style Guide
+# This will first create a macro called donation, which includes the fields used for data import.
+# Then the recipe will create a Data Import Batch with between 1 and 10 opportunities.
+
+# Run this to generate data in a scratch org:
+# cci task run generate_and_load_from_yaml -o generator_yaml ../Snowfakery-new/examples/npsp/BDI_npsp.recipe.yml -o num_records 10 -o num_records_tablename npsp__DataImportBatch__c --org qa
 
 # macro for donation fields
 - macro: donation
@@ -21,7 +27,8 @@
         max: 10000
     npsp__NPSP_Data_Import_Batch__c:
       reference: batch    
-    
+
+# Now we can create a Data Import Batch object    
 - object: npsp__DataImportBatch__c
   nickname: batch
   fields:
@@ -34,6 +41,7 @@
     npsp__Donation_Matching_Rule__c: npsp__donation_amount__c;npsp__donation_date__c
     
 
+# Finally, let's create a Data Import object
 - object: npsp__DataImport__c
   count:
     random_number:
@@ -42,9 +50,9 @@
   include: donation     
   fields:
     npsp__Contact1_Firstname__c:
-      fake: first_name
+      fake: FirstName
     npsp__Contact1_Lastname__c:
-      fake: last_name
+      fake: LastName
     npsp__Contact1_Personal_Email__c:
       fake: safe_email
     npsp__Contact1_Preferred_Email__c: Personal
