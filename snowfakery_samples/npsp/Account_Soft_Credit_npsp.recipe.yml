@@ -1,13 +1,22 @@
 # Snowfakery recipe for Opportunities with NPSP Account Soft Credits
+# Creates 2 Contacts
+# Creates 2 Opportunties (will be default record type unless you specify otherwise) for each Contact
+# Creates 2 Account Soft Credits for each Opportunity, splitting the amount between the two new Accounts 50/50
+
+# Run this to generate data in a scratch org:
+# cci task run generate_and_load_from_yaml -o generator_yaml ../Snowfakery-new/examples/npsp/Account_Soft_Credit_npsp.recipe.yml -o num_records 10 -o num_records_tablename Contact --org qa
+
+# Run this to generate records in an output JSON file:
+# snowfakery ./Account_Soft_Credit_npsp.recipe.yml --output-format=json --output-file=foo.json
 
 # Contact - the Contact that is making a donation
 - object: Contact
   count: 2
   fields:
     FirstName:
-      fake: first_name
+      fake: FirstName
     LastName:
-      fake: last_name
+      fake: LastName
     # Additional Contact fields here
   friends:
     # Opportunity - donation(s) made by the contact
