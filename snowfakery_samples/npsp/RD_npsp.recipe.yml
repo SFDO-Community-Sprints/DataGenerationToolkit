@@ -1,34 +1,21 @@
 ### ------------- [          ORDER OF INSERT         ]------------ ###
-# 1-0. Account (1)
-# 1-1. Contact (1)
+# 1-0. Account (5)
+# 1-1. Contact (5)
 # 1-2. Define MACRO for npe03__Recurring_Donation__c
-# 1-3. npe03__Recurring_Donation__c (1) - Org Account
-# 1-4. npe03__Recurring_Donation__c (1) - Household
+# 1-3. npe03__Recurring_Donation__c (5) - Org Account
+# 1-4. npe03__Recurring_Donation__c (5) - Household
 
 ### ----------- [ RD_npsp.recipe.yml Summary ]---------- ###
-# Create a set of 2 Recurring Donations related to 1 Contact and 1 Organization Account.
+# This recipe creates a set of 10 Recurring Donation records, at random # of Open-ended and Fixed-length donations, 
+# related to 5 Contact and 5 Organization Account.
 # This recipe is specifically for Enhanced Recurring Donations
 
 ### ----------- [               CLI RUN                ]---------- ###
 
-# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/npsp/RD_npsp.recipe.yml --num_records 300 --num_records_tablename npe03__Recurring_Donation__c --org dqa
+# cci task run generate_and_load_from_yaml --generator_yaml snowfakery_samples/npsp/RD_npsp.recipe.yml --num_records 300 --num_records_tablename npe03__Recurring_Donation__c --org qa
 # snowfakery --output-format json --output-file src/foo.json snowfakery_samples/npsp/RD_npsp.recipe.yml
 
 ### ----------- [            Recipe Starts             ]---------- ###
-
-- object: Account
-  nickname: A Company
-  fields:
-    Name:
-      fake: company
-    RecordType: Organization
-
-- object: Contact
-  fields:
-    FirstName:
-      fake: FirstName
-    LastName:
-      fake: LastName
 
 - macro: commomfields
   fields:
@@ -36,48 +23,104 @@
       random_number:
         min: 10
         max: 500
-    npsp__Day_of_Month__c:
-      random_number:
-        min: 1
-        max: 28
-    npsp__DisableFirstInstallment__c: true
-    npsp__StartDate__c: 
-      date_between:
-        start_date: -1y
-        end_date: +1y
-    npsp__InstallmentFrequency__c: 1
+
     npe03__Installment_Period__c: 
       random_choice:
         - Monthly
         - Yearly
         - Weekly
         - 1st and 15th
+    npsp__Day_of_Month__c:
+      if:
+        - choice:
+            when: ${{npe03__Installment_Period__c == 'Monthly'}}
+            pick: ${{random_number(min=1,max=29)}}
+        - choice:
+            when: ${{npe03__Installment_Period__c != 'Monthly'}}
+            pick: NULL
+
+    # uncomment this line if you want to disable the first installment of Opportunity Auto-Creation
+    #npsp__DisableFirstInstallment__c: true
+    npsp__StartDate__c: 
+      date_between:
+        start_date: today
+        end_date: +1y
+    npsp__InstallmentFrequency__c:
+      if:
+        - choice: 
+            when: ${{npe03__Installment_Period__c == 'Monthly'}}
+            pick: ${{random_number(min=1,max=6)}}
+        - choice: 
+            when: ${{npe03__Installment_Period__c == 'Yearly'}}
+            pick: ${{random_number(min=1,max=2)}}
+        - choice: 
+            when: ${{npe03__Installment_Period__c == 'Weekly'}}
+            pick: ${{random_number(min=1,max=3)}}
+        - choice: 
+            when: ${{npe03__Installment_Period__c == '1st and 15th'}}
+            pick: 1
+      
     npsp__RecurringType__c:
       random_choice:
         - Fixed
         - Open
+    npe03__Installments__c:
+      if:
+        - choice: 
+            when: ${{npsp__RecurringType__c == 'Fixed'}}
+            pick: ${{random_number(min=1,max=12)}}
+        - choice: 
+            when: ${{npsp__RecurringType__c != 'Fixed'}}
+            pick: NULL
+
     npsp__Status__c:
       random_choice:
         Lapsed: 10%
         Active: 60%
         Closed: 10%
         Paused: 20%
-      
+
+    npsp__PaymentMethod__c:
+      random_choice:
+        Credit Card: 60%
+        Check: 20%
+        ACH: 20%
+    npsp__CardLast4__c:
+      if:
+        - choice:
+            when: ${{npsp__PaymentMethod__c == 'Credit Card'}}
+            pick: ${{random_number(min=0000,max=9999)}}
+        - choice:
+            when: ${{npsp__PaymentMethod__c != 'Credit Card'}}
+            pick: NULL
 
 - object: npe03__Recurring_Donation__c
-  count: 1
+  count: 5
   include: commomfields
   fields:
-    npe03__Contact__c: 
-      reference: Contact
-    Name: RD for ${{npe03__Contact__c.FirstName}} ${{npe03__Contact__c.LastName}}
     
+    npe03__Contact__c: 
+      reference:
+        - object: Contact
+          fields:
+            FirstName:
+              fake: FirstName
+            LastName:
+              fake: LastName 
+    Name: RD for ${{Contact.FirstName}} ${{Contact.LastName}}  
 
 - object: npe03__Recurring_Donation__c
-  count: 1
+  count: 5
   include: commomfields
   fields:
+    
     npe03__Organization__c: 
-      reference: A Company
-    Name: RD for ${{npe03__Organization__c.Name}}
+      reference: 
+        - object: Account
+          fields:
+            Name:
+              fake: company
+            RecordType: Organization
+    Name: RD for ${{Account.Name}}
+    
     
