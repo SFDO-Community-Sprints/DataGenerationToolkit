@@ -1,5 +1,5 @@
 ### ------------- [          ORDER OF INSERT         ]------------ ###
-# 1-0. Account (5)
+# 1-0. Org Account (5)
 # 1-1. Contact (5)
 # 1-2. Define MACRO for npe03__Recurring_Donation__c
 # 1-3. npe03__Recurring_Donation__c (5) - Org Account
@@ -59,7 +59,6 @@
         - choice: 
             when: ${{npe03__Installment_Period__c == '1st and 15th'}}
             pick: 1
-      
     npsp__RecurringType__c:
       random_choice:
         - Fixed
@@ -72,14 +71,12 @@
         - choice: 
             when: ${{npsp__RecurringType__c != 'Fixed'}}
             pick: NULL
-
     npsp__Status__c:
       random_choice:
         Lapsed: 10%
         Active: 60%
         Closed: 10%
         Paused: 20%
-
     npsp__PaymentMethod__c:
       random_choice:
         Credit Card: 60%
