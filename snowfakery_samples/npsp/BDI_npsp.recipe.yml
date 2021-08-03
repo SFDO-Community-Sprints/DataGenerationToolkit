@@ -54,7 +54,7 @@
     npsp__Contact1_Lastname__c:
       fake: LastName
     npsp__Contact1_Personal_Email__c:
-      fake: safe_email
+      fake: email
     npsp__Contact1_Preferred_Email__c: Personal
     npsp__Account1_Name__c:
       fake: company
