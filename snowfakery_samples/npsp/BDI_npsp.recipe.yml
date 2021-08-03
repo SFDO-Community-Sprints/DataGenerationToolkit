@@ -29,11 +29,15 @@
       reference: batch    
 
 # Now we can create a Data Import Batch object    
+- var: randomBatchNumber
+  value:
+    random_number:
+      min: 1
+      max: 1000
 - object: npsp__DataImportBatch__c
   nickname: batch
   fields:
-    Name:
-      fake: name
+    Name: Batch ${{randomBatchNumber}}
     npsp__Batch_Process_Size__c: 50
     npsp__Batch_Status__c: Open
     npsp__Contact_Matching_Rule__c: Firstname,Lastname,Email
