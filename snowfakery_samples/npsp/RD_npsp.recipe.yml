@@ -43,8 +43,8 @@
     #npsp__DisableFirstInstallment__c: true
     npsp__StartDate__c: 
       date_between:
-        start_date: today
-        end_date: +1y
+        start_date: -180d
+        end_date: +120d
     npsp__InstallmentFrequency__c:
       if:
         - choice: 
@@ -72,11 +72,20 @@
             when: ${{npsp__RecurringType__c != 'Fixed'}}
             pick: NULL
     npsp__Status__c:
-      random_choice:
-        Lapsed: 10%
-        Active: 60%
-        Closed: 10%
-        Paused: 20%
+        if:
+        - choice: 
+            when: ${{date(npsp__StartDate__c) <= today - relativedelta(months=4) }}
+            pick: Lapsed
+        - choice: 
+            when: ${{date(npsp__StartDate__c) <= today - relativedelta(months=6) }}
+            pick: Closed
+        - choice: 
+            when: ${{date(npsp__StartDate__c) <= today - relativedelta(months=2) }}
+            pick: Paused
+        - choice: 
+            when: ${{date(npsp__StartDate__c) >= today }}
+            pick: Active
+
     npsp__PaymentMethod__c:
       random_choice:
         Credit Card: 60%
