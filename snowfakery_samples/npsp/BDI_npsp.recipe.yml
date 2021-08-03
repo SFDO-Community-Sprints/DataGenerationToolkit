@@ -3,7 +3,7 @@
 # Then the recipe will create a Data Import Batch with between 1 and 10 opportunities.
 
 # Run this to generate data in a scratch org:
-# cci task run generate_and_load_from_yaml -o generator_yaml ../Snowfakery-new/examples/npsp/BDI_npsp.recipe.yml -o num_records 10 -o num_records_tablename npsp__DataImportBatch__c --org qa
+# cci task run generate_and_load_from_yaml --generator_yaml ../Snowfakery-new/examples/npsp/BDI_npsp.recipe.yml --num_records 10 --num_records_tablename npsp__DataImportBatch__c --org qa
 
 # macro for donation fields
 - macro: donation
