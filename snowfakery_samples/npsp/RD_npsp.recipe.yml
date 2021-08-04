@@ -45,6 +45,7 @@
       date_between:
         start_date: -180d
         end_date: +120d
+    npe03__Date_Established__c: ${{npsp__StartDate__c}}
     npsp__InstallmentFrequency__c:
       if:
         - choice: 
