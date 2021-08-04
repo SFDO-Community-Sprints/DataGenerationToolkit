@@ -9,6 +9,7 @@
 # This recipe creates a set of 10 Recurring Donation records, at random # of Open-ended and Fixed-length donations, 
 # related to 5 Contact and 5 Organization Account.
 # This recipe is specifically for Enhanced Recurring Donations
+# https://powerofus.force.com/s/article/NPSP-Recurring-Donations-Overview-and-Setup
 
 ### ----------- [               CLI RUN                ]---------- ###
 
@@ -41,11 +42,11 @@
 
     # uncomment this line if you want to disable the first installment of Opportunity Auto-Creation
     #npsp__DisableFirstInstallment__c: true
-    npsp__StartDate__c: 
+    npsp__StartDate__c: # when value is unassigned, it defaults to current date.
       date_between:
         start_date: -180d
         end_date: +120d
-    npe03__Date_Established__c: ${{npsp__StartDate__c}}
+    npe03__Date_Established__c: ${{npsp__StartDate__c}} # when value is unassigned, it defaults to current date.
     npsp__InstallmentFrequency__c:
       if:
         - choice: 
