@@ -4,41 +4,57 @@
 
 > This project aims to create toolkit of tools and documentation for generating test data sets based on admin-selected criteria.
 
+> This project a proud part of Salesforce.org Open Source Commons initiative.
+
 **[Read our guide on getting data into your Salesforce Sandbox!](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide)**
 
-### Project Vision/Goals
+### Problem
+Salesforce Admins, Developers, and Consultants need to populate test environments with valid data.  The methods for completing this task are costly, inefficient, or inaccessible.  Utilizing workaround solutions - or worse, making demos/changes in Production - are disruptive and potentially hazardous.
 
-- Everyone has access to an open process/tool to reliably generate sample data for telling user stories.
-- Admin-friendly interface to define requirements for the data generated.
-- Data sets generated through this process could be appopriate for medium-sized orgs and can fit in a sandbox.
-- Data sets generated through this process could be valid for large data valume (LDV) testing.
-- Develop process for how you can build test data sets that follow a story (automated? manual? best practice doc?).
-- Document avialable tools and processes to create and migrate data between orgs.
-- Prioritize leadership development/capacity building through project leadership/contributions from customers, partners, devs, etc.
+### Solution
+We propose a combination of tooling, documentation, and marketing efforts that offer technical and cultural solutions to the problem described above.  By developing tools like Snowfakery, as well as documenting existing tools and methods, we empower Admins, Developers, and Consultants to populate test environments with valid data sets.
+
+### Project Vision/Goals
+- Every Admin, Developer, and Consultant has access to test environments populated with valid data
+- Ability to generate data sets that follow a story
+- Ability to generate data sets that are valid for small, medium, and large data volumes (including LDV) for testing purposes
+- Ability to generate data sets that are fake but realistic-seeming
+- Open source and free tools facilitate not only data generation, but also sharing best practices *about* data generation between orgs
+- High quality documentation guides users to the appropriate method for their data generation goals and how to execute that method
+- Support for declarative and developer focused solutions
+- Striving for admin-friendly UI for creating data sets [tentatively titled SnowMakery] 
+- This project places a particular emphasis on leadership development, with active participation from many community members who are underrepresented in technology, less familiar with code solutions, and/or early in their career.  Contributors who "stick" can be described as: ambitious, stubborn, playful, creative
+- The Data Generation Toolkit leadership team also maintains the [Snowfakery Recipe Rep](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
+
+### Working Shared Definitions
+- Test Environments: this project supports working in sandbox, scratch orgs, or dev orgs.  We do not support using these methods in Production Salesforce instances
+- Data Set: a corpus of database records that include multiple objects and fields.
+- Valid test data: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
 
 #### Example Use Cases We Aim to Support:
-
 - QA an org populated with permutations of all, or nearly all, the types of data that are relavent to the project.
-- Be able to reliably and easily load sample data into a given Salesforce org (production, sandbox or scratch).
+- Be able to reliably and easily load sample data into a given Salesforce org (sandbox, dev, or scratch).
 - Have a data set for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
 - Have a data set that ensures the privacy of people represented in the dataset (ie not real names).
 - Have data sets at scales that allow for testing bulk data processing.
 
 ### Ongoing Task Streams:
 
-Currently the project team has two major efforts for our work:
+Currently the project team has several major efforts for our work:
 
-- Documentation of existing tools and solutions.
-- Creation of _Snowmakery_ a community supported tool that will empower easy creation of data sets tailored to an org's needs.
-- [Sample Recipes for Salesforce.org packages](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/tree/main/snowfakery_samples).
+- [Maintaing a repository of community-sourced Snowfakery recipes](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
+- Documenting declarative methods and tools to seed Sandboxes with valid data
+- Evangelizing Snowfakery through [public events, blog posts,](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Talks---Webinars)
+
+- On hold: Creation of _Snowmakery_ a community supported tool that will empower easy creation of data sets tailored to an org's needs.
 
 ### Project Accomplishments:
 
 - [Project Personas](https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenPersonas_202102.pdf): a collection of people we target our documentation about and to.
-- [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide): a guide to using data with Sandboxes.
-- [Snowfakery Example Library](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/tree/main/snowfakery_samples): a growing collection of Snowfakery data generator recipes for Salesforce.
+- [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide): a guide to populating sandboxes with useful data
+- [Snowfakery Example Library](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates): a growing collection of Snowfakery data generator recipes for Salesforce.
 
-We keep our most recent full notes from meetings and Sprints in the project wiki. The notes from the [February 2021 Virtual Sprint](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/February-2021-Virtual-Sprint-Accomplishments) are the most recent.
+We keep our most recent full notes from meetings and Sprints in the project wiki.
 
 #### Proof of Concept Code:
 
@@ -72,24 +88,29 @@ Help us give you the thanks you deserve and ensure future contributors know who 
 - Salesforce Liason:
   - Paul Prescod (Salesforce.org)
 
-We also keep a [complete list of contributors](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Project-Contributors).
+We also keep a [complete list of contributors](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Project-Contributors).  Please add yourself to the list!
 
 ### Past Project Accomplishments
 
+- *Between Feb '21 Virtual Sprint and present*
+  - Moved Snowfakery recipe cookbook into an independent, community maintained repo
+  - Designed Meeting in a Box for User Group and Conference presentations on sandbox seeding
+  - Defined use case for seeding a sandbox with a Flow
+  - Scheduled quarterly, public Snowfakery trainings
 - *Between Sept '20 Virtual Sprint and Feb '21 Virtual Sprint*
   - Completed first full draft of Data Generation Guide document; including technical edit
   - Kicked the tires on Snowfakery, for real
   - Made several public presentations
   - Implemented Project Boards to track issues and discussion topics
   - Survived despite pandemic, fascism, etc.
-- *9/23-9/24 Virtual Sprint*
+- *9/23/20-9/24/20 Virtual Sprint*
   - Drafted architecture diagrams for a UI to sit on top of Snowfakery. This will be called _Snowmakery!_ There are two proof of concepts that have been initiated. One is inside of the org, the other is in Heroku.
   - Analyzed survey data from 75 community members; updated relevant Personas based on survey insights
   - Established document outline and Admin Story for documentation project that describes how to Generate Data and Move Data between orgs
   - Documented limitations and considerations for Partial Data sampling algorithm and manual steps, third party apps, and code for creating mock data records
   - Documented steps for an Admin-audience to use CCI to move data records from one Dev Sandbox to another Dev Sandbox (or any two persistent orgs)
   - QA-ed documentation steps for CCI steps (referenced above)
-- *3/31 -> 4/1 virtual sprint*
+- *3/31/20 -> 4/1/20 virtual sprint*
   - Determined that Snowfakery accomplishes many of the original requirements brainstormed at the Philly Sprint (fall 2019) (namely: ability to generate mock data with related tables, random names and values, standard and custom objects, datasets of any size/scale, ability to populate Salesforce orgs)
   - Socialized Snowfakery to community members
   - Onboarded project leadership from multiple orgs and began application for inclusion in Open Source Commons program
@@ -116,21 +137,3 @@ We also keep a [complete list of contributors](https://github.com/SFDO-Community
 - [NPSP Data Dictionary](https://attain-projects.quip.com/yD1wAsdz1m1Q/NPSP-Public-Data-Dictionary)
 - [Wave Data Generator](https://github.com/ttse-sfdc/sfdc-wave-data-generator) (generates data for Salesforce org, and builds linkages between objects)
 - [JSON/YAML Editor](https://json-editor.github.io/json-editor/)
-
-## Development
-
-Choose one of the below CCI flows (not both!):
-
-To create an EDA-based scratch org from this repo:
-
-1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
-2. Run `cci flow run eda:trial_org --org dev` to deploy this project.
-3. Run `cci task run generate_and_load_from_yaml -o generator_yaml snowfakery_samples/EDA/eda_objects.yml --org dev` to load example data.
-4. Run `cci org browser dev` to open the org in your browser.
-
-To create an NPSP-based scratch org from this repo:
-
-1. [Set up CumulusCI](https://cumulusci.readthedocs.io/en/latest/tutorial.html)
-2. Run `cci flow run npsp:install_prod --org dev` to deploy this project.
-3. Run `cci task run generate_and_load_from_yaml -o generator_yaml <INSERT YOUR YAML FILE NAME HERE> --org dev` to load example data.  For example, the YML file might be snowfakery_samples/npsp/Account_Soft_Credit_npsp.recipe.yml
-4. Run `cci org browser dev` to open the org in your browser.
