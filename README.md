@@ -24,7 +24,7 @@ We propose a combination of tooling, documentation, and marketing efforts that o
 - Support for declarative and developer focused solutions
 - Striving for admin-friendly UI for creating data sets [tentatively titled SnowMakery] 
 - This project places a particular emphasis on leadership development, with active participation from many community members who are underrepresented in technology, less familiar with code solutions, and/or early in their career.  Contributors who "stick" can be described as: ambitious, stubborn, playful, creative
-- The Data Generation Toolkit leadership team also maintains the [Snowfakery Recipe Rep](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
+- The Data Generation Toolkit leadership team also maintains the [Snowfakery Recipe Repo](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
 
 ### Working Shared Definitions
 - Test Environments: this project supports working in sandbox, scratch orgs, or dev orgs.  We do not support using these methods in Production Salesforce instances
