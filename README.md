@@ -9,7 +9,7 @@
 **[Read our guide on getting data into your Salesforce Sandbox!](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide)**
 
 ### Problem
-Salesforce Admins, Developers, and Consultants need to populate test environments with valid data.  The methods for completing this task are costly, inefficient, or inaccessible.  Utilizing workaround solutions - or worse, making demos/changes in Production - are disruptive and potentially hazardous.
+Salesforce Admins, Developers, and Consultants need to populate test environments with valid data.  The existing methods for completing this task are costly, inefficient, or inaccessible.  Utilizing workaround solutions - or worse, making demos/changes in Production - are disruptive and potentially hazardous.
 
 ### Solution
 We propose a combination of tooling, documentation, and marketing efforts that offer technical and cultural solutions to the problem described above.  By developing tools like Snowfakery, as well as documenting existing tools and methods, we empower Admins, Developers, and Consultants to populate test environments with valid data sets.
