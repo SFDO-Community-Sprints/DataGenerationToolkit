@@ -32,7 +32,7 @@ We propose a combination of tooling, documentation, and marketing efforts that o
 - Valid test data: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
 
 #### Example Use Cases We Aim to Support:
-- QA an org populated with permutations of all, or nearly all, the types of data that are relavent to the project.
+- Quality assurance (QA) testing an org populated with permutations of all, or nearly all, the types of data that are relevant to the project.
 - Be able to reliably and easily load sample data into a given Salesforce org (sandbox, dev, or scratch).
 - Have a data set for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
 - Have a data set that ensures the privacy of people represented in the dataset (ie not real names).
