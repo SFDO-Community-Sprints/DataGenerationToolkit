@@ -42,7 +42,7 @@ We propose a combination of tooling, documentation, and marketing efforts that o
 
 Currently the project team has several major efforts for our work:
 
-- [Maintaing a repository of community-sourced Snowfakery recipes](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
+- [Maintaining a repository of community-sourced Snowfakery recipes](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
 - Documenting declarative methods and tools to seed Sandboxes with valid data
 - Evangelizing Snowfakery through [public events, blog posts,](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Talks---Webinars)
 
