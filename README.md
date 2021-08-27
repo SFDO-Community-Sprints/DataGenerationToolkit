@@ -35,7 +35,7 @@ We propose a combination of tooling, documentation, and marketing efforts that o
 - Quality assurance (QA) testing an org populated with permutations of all, or nearly all, the types of data that are relevant to the project.
 - Be able to reliably and easily load sample data into a given Salesforce org (sandbox, dev, or scratch).
 - Have a data set for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
-- Have a data set that ensures the privacy of people represented in the dataset (ie not real names).
+- Have a data set that ensures the privacy of people represented in the dataset (for example, not real names).
 - Have data sets at scales that allow for testing bulk data processing.
 
 ### Ongoing Task Streams:
