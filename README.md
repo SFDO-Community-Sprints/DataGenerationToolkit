@@ -85,7 +85,7 @@ Help us give you the thanks you deserve and ensure future contributors know who 
   - Aaron Crosman (Attain)
   - Samantha Shain (William Penn Foundation)
   - Cassie Supilowski (OneGoal)
-- Salesforce Liason:
+- Salesforce Liaison:
   - Paul Prescod (Salesforce.org)
 
 We also keep a [complete list of contributors](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Project-Contributors).  Please add yourself to the list!
