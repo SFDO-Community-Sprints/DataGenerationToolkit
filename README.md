@@ -28,7 +28,7 @@ We propose a combination of tooling, documentation, and marketing efforts that o
 
 ### Working Shared Definitions
 - Test Environments: this project supports working in sandbox, scratch orgs, or dev orgs.  We do not support using these methods in Production Salesforce instances
-- Data Set: a corpus of database records that include multiple objects and fields.
+- Data Set: a collection of related records that include multiple objects and fields.
 - Valid test data: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
 
 #### Example Use Cases We Aim to Support:
