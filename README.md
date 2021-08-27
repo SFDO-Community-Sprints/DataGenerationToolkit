@@ -12,7 +12,7 @@
 Salesforce Admins, Developers, and Consultants need to populate test environments with valid data.  The existing methods for completing this task are costly, inefficient, or inaccessible.  Utilizing workaround solutions - or worse, making demos/changes in Production - are disruptive and potentially hazardous.
 
 ### Solution
-We propose a combination of tooling, documentation, and marketing efforts that offer technical and cultural solutions to the problem described above.  By developing tools like Snowfakery, as well as documenting existing tools and methods, we empower Admins, Developers, and Consultants to populate test environments with valid data sets.
+We propose a combination of tooling, documentation, and advocacy efforts that offer technical and recommended best practices the problem described above.  By developing tools like Snowfakery, as well as documenting existing tools and methods, we empower Admins, Developers, and Consultants to populate Salesforce environments with valid data sets.
 
 ### Project Vision/Goals
 - Every Admin, Developer, and Consultant has access to test environments populated with valid data
@@ -27,7 +27,7 @@ We propose a combination of tooling, documentation, and marketing efforts that o
 - The Data Generation Toolkit leadership team also maintains the [Snowfakery Recipe Repo](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
 
 ### Working Shared Definitions
-- Test Environments: this project supports working in sandbox, scratch orgs, or dev orgs.  We do not support using these methods in Production Salesforce instances
+- Test Environments: this project supports working in sandbox, scratch orgs, or dev orgs.  Certain use cases for production orgs are valid, but should be attempted with caution and care!
 - Data Set: a collection of related records that include multiple objects and fields.
 - Valid test data: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
 
