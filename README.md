@@ -54,7 +54,7 @@ Currently the project team has several major efforts for our work:
 - [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide): a guide to populating sandboxes with useful data
 - [Snowfakery Example Library](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates): a growing collection of Snowfakery data generator recipes for Salesforce.
 
-We keep our most recent full notes from meetings and Sprints in the project wiki.
+We keep our most recent full notes from meetings and Sprints in the [project wiki](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 
 #### Proof of Concept Code:
 
