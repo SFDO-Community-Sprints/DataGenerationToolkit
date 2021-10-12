@@ -139,13 +139,3 @@
       fake.text:
         max_nb_chars: 100
     EmailBouncedDate: ${{fake.date}}T${{fake.time}}Z
-    CleanStatus:
-      random_choice:
-        - Matched
-        - Different
-        - Acknowledged
-        - NotFound
-        - Inactive
-        - Pending
-        # - SelectMatch  # causes problems
-        - Skipped
