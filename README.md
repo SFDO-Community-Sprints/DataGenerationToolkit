@@ -63,11 +63,11 @@ During the course of this project some ideas have been tested in code, and to en
 Currently those include:
 
 1. [A CumulusCI Task](proofs-of-concept/OriginalCciTask) created during this project's first sprint to generate permutations of data.
-1. [A web-based Snowfakery recipe editor](proofs-of-concept/SnowmakeryEditory) created during the fall 2020 virtual sprint. This was the second tool named Snowmakery and largely confirmed that this project's UI will bare that name.
+1. [A web-based Snowfakery recipe editor](proofs-of-concept/SnowmakeryEditor) created during the fall 2020 virtual sprint. This was the second tool named Snowmakery and largely confirmed that this project's UI will bare that name.
 
 ### Project Meetings
 
-The main project team meets monthly to maintain momentum between sprints. You can contact us through the [PowerOfUs Hub](https://powerofus.force.com/s/group/0F91E000000brOoSAI/community-project-data-generation) to get details for joining those meetings. Notes from project meetings are recorded on the [wiki for this repository](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
+The main project team meets monthly to maintain momentum between sprints. You can contact us through the [Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHjVSAU) to get details for joining those meetings. Notes from project meetings are recorded on the [wiki for this repository](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 
 ### Project Audience
 
