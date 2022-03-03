@@ -2,6 +2,9 @@
 
 ## Summary
 
+_Cost:_ Free
+_Type:_ Command Line Client
+
 This is a plugin to SFDX that does exactly what is says it does: moves data between orgs.
 
 In many ways it is similar to Snowfakery when it first arrived: lots of potential, light on docs with useful examples. We launched a whole work stream to fill that gap for Snowfakery, with the support of the lead developer. Without that kind of support it is unlikely to be worth going into detail in this project. There was a GUI built for it, but that project has been abandoned.
@@ -9,7 +12,8 @@ In many ways it is similar to Snowfakery when it first arrived: lots of potentia
 **Strengths:**
 - Free.
 - Straight forward to use
-- Appears fast (uses batch API)
+- Appears fast (uses batch API -- not heavily tested)
+- Could be used with CICD solutions
 
 **Weaknesses:**
 - Hand writing JSON isn't thrilling
