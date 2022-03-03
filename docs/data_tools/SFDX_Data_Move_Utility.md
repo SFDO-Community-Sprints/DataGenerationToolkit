@@ -4,12 +4,13 @@
 
 _Cost:_ Free
 _Type:_ Command Line Tool/SFDX Plugin
+_Level of Effort:_ Quick to get started if you are comfortable with SFDX, JSON, and SOQL. However for complex orgs it could take signficant time to write all the SOQL queries.
 
 This is a plugin to SFDX that does exactly what is says it does: moves data between orgs.
 
 In many ways it is similar to Snowfakery when it first arrived: lots of potential, light on docs with useful examples. We launched a whole work stream to fill that gap for Snowfakery, with the support of the lead developer. Without that kind of support it is unlikely to be worth going into detail in this project. There was a GUI built for it, but that project has been abandoned.
 
-Quick to get started if you are comfortable with SFDX, JSON, and SOQL. However for complex orgs it could take signficant time to write all the SOQL queries.
+
 
 **Strengths:**
 - Free.
