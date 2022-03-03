@@ -2,14 +2,14 @@
 
 _Cost:_ Free
 _Type:_ Salesforce AppExchange App
-_Level of Effort:_ If you are familiar with your org structure and creating related records, you 
+_Level of Effort:_ If you are familiar with your org structure and creating related records, you
 likely can get several levels of related records created in under 3 hours if you are new to the app
 
-##Summary 
+##Summary
 [link](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000GBhE8UAL "Data Generator") is a declaritive app will quickly insert thousands of records customized to the unique shape of your Salesforce org.
 It is a great start to getting some related records into your org. It’s not likely to have all the possible variations
-of data you want, but if you start with the right parent record, are OK doing multiple runs and a bit of trial and error, this 
-is a great declaritive tool to get started with. 
+of data you want, but if you start with the right parent record, are OK doing multiple runs and a bit of trial and error, this
+is a great declaritive tool to get started with.
 
 ##Notes
 - Limit of 10000 records per run
