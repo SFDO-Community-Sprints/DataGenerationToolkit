@@ -6,4 +6,5 @@ For a full list of tools to be reviewed see [our tool inventory](https://docs.go
 
 ## Existing Reviews
 
+* [Data Generator App](Data_Generator_App.md)
 * [SFDX Data Move Utility](SFDX_Data_Move_Utility.md)
