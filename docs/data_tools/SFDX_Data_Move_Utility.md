@@ -3,7 +3,7 @@
 ## Summary
 
 _Cost:_ Free
-_Type:_ Command Line Client
+_Type:_ Command Line Tool/SFDX Plugin
 
 This is a plugin to SFDX that does exactly what is says it does: moves data between orgs.
 
