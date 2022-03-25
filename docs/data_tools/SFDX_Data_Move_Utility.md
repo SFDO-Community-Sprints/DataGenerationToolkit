@@ -53,7 +53,7 @@ Create a `export.json` file to move accounts:
 }
 ```
 
-Run move util (your terminal must be in the same directory has the file in previous step):
+Run move util (your terminal must be in the same directory as the file in previous step):
 `sfdx sfdmu:run --sourceusername DataMoveSource --targetusername DataMoveScratch`
 
 _Let's try something more...interesting...Multiple related objects._
