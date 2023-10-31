@@ -14,7 +14,33 @@ Salesforce Admins, Developers, and Consultants need to populate test environment
 ### Solution
 We propose a combination of tooling, documentation, and advocacy efforts that offer technical and recommended best practices the problem described above.  By developing tools like Snowfakery, as well as documenting existing tools and methods, we empower Admins, Developers, and Consultants to populate Salesforce environments with valid data sets.
 
-### Project Vision/Goals
+## Sub-Projects
+
+The Data Generation Toolkit Project consists of several sub-projects, each focused on one area of the larger challenge we are addressing.
+
+### Snowfakery Recipes
+
+Our largest project is our collection of Snowfakery recipes meant to be used for learning and extensions. There are recipes for Salesforce Core, NPSP, EDA, and several open source commons projects.
+
+### Guides
+
+We have generated several guides to help support admins and others use need to seed sandboxes or use Snowfakery for other projects.
+
+* Meet Alex
+* Snwofakery Best Practices (Coming soon)
+* Snowfakery cheatsheet
+* Using Recipes
+* Contributing Recipes
+
+### Education Fakery Provider
+
+A Python-based Faker project to create higher education fake data. Included in Snowfakery since 3.6. Also avialable as a Python extension that can be used with the main Faker library.
+
+### Nonprofit Fakery Provider
+
+A Python-based Faker project to create nonprofit-related fake data. Included in Snowfakery since 3.6. Also avialable as a Python extension that can be used with the main Faker library.
+
+## General Project Vision/Goals
 - Every Admin, Developer, and Consultant has access to test environments populated with valid data
 - Ability to generate data sets that follow a story
 - Ability to generate data sets that are valid for small, medium, and large data volumes (including LDV) for testing purposes
@@ -22,7 +48,6 @@ We propose a combination of tooling, documentation, and advocacy efforts that of
 - Open source and free tools facilitate not only data generation, but also sharing best practices *about* data generation between orgs
 - High quality documentation guides users to the appropriate method for their data generation goals and how to execute that method
 - Support for declarative and developer focused solutions
-- Striving for admin-friendly UI for creating data sets [tentatively titled SnowMakery] 
 - This project places a particular emphasis on leadership development, with active participation from many community members who are underrepresented in technology, less familiar with code solutions, and/or early in their career.  Contributors who "stick" can be described as: ambitious, stubborn, playful, creative
 - The Data Generation Toolkit leadership team also maintains the [Snowfakery Recipe Repo](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
 
