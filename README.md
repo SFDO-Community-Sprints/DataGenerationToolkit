@@ -27,20 +27,21 @@ Our largest project is our collection of Snowfakery recipes meant to be used for
 We have generated several guides to help support admins and others use need to seed sandboxes or use Snowfakery for other projects.
 
 * Meet Alex
-* Snwofakery Best Practices (Coming soon)
-* Snowfakery cheatsheet
+* Snowfakery Best Practices (Planned)
+* Snowfakery cheat sheet (planned)
 * Using Recipes
 * Contributing Recipes
 
 ### Education Fakery Provider
 
-A Python-based Faker project to create higher education fake data. Included in Snowfakery since 3.6. Also avialable as a Python extension that can be used with the main Faker library.
+A Python-based Faker project to create higher education fake data. Included in Snowfakery since 3.6. Also available as a Python extension that can be used with the main Faker library.
 
 ### Nonprofit Fakery Provider
 
-A Python-based Faker project to create nonprofit-related fake data. Included in Snowfakery since 3.6. Also avialable as a Python extension that can be used with the main Faker library.
+A Python-based Faker project to create nonprofit-related fake data. Included in Snowfakery since 3.6. Also available as a Python extension that can be used with the main Faker library.
 
 ## General Project Vision/Goals
+
 - Every Admin, Developer, and Consultant has access to test environments populated with valid data
 - Ability to generate data sets that follow a story
 - Ability to generate data sets that are valid for small, medium, and large data volumes (including LDV) for testing purposes
@@ -48,47 +49,15 @@ A Python-based Faker project to create nonprofit-related fake data. Included in 
 - Open source and free tools facilitate not only data generation, but also sharing best practices *about* data generation between orgs
 - High quality documentation guides users to the appropriate method for their data generation goals and how to execute that method
 - Support for declarative and developer focused solutions
-- This project places a particular emphasis on leadership development, with active participation from many community members who are underrepresented in technology, less familiar with code solutions, and/or early in their career.  Contributors who "stick" can be described as: ambitious, stubborn, playful, creative
-- The Data Generation Toolkit leadership team also maintains the [Snowfakery Recipe Repo](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
-
-### Working Shared Definitions
-- Test Environments: this project supports working in sandbox, scratch orgs, or dev orgs.  Certain use cases for production orgs are valid, but should be attempted with caution and care!
-- Data Set: a collection of related records that include multiple objects and fields.
-- Valid test data: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
-
-#### Example Use Cases We Aim to Support:
-- Quality assurance (QA) testing an org populated with permutations of all, or nearly all, the types of data that are relevant to the project.
-- Be able to reliably and easily load sample data into any connected Salesforce org
-- Have a data set for demos, potentially with the ability to add specific sets of data that could be used for story based training materials.
-- Have a data set that ensures the privacy of people represented in the dataset (for example, not real names).
-- Have data sets at scales that allow for testing bulk data processing.
-
-### Ongoing Task Streams:
-
-Currently the project team has several major efforts for our work:
-
-- [Maintaining a repository of community-sourced Snowfakery recipes](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates)
-- Documenting declarative methods and tools to seed Sandboxes with valid data
-- Evangelizing Snowfakery through [public events, blog posts,](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Talks---Webinars)
-
-- On hold: Creation of _Snowmakery_ a community supported tool that will empower easy creation of data sets tailored to an org's needs.
-
-### Project Accomplishments:
-
-- [Project Personas](https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenPersonas_202102.pdf): a collection of people we target our documentation about and to.
-- [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide): a guide to populating sandboxes with useful data
-- [Snowfakery Example Library](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates): a growing collection of Snowfakery data generator recipes for Salesforce.
 
 We keep our most recent full notes from meetings and Sprints in the [project wiki](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 
-#### Proof of Concept Code:
 
-During the course of this project some ideas have been tested in code, and to ensure that code isn't lost and doesn't confuse other efforts in this repo they are kept in the proofs-of-concept directory.
+### Working Shared Definitions
 
-Currently those include:
-
-1. [A CumulusCI Task](proofs-of-concept/OriginalCciTask) created during this project's first sprint to generate permutations of data.
-1. [A web-based Snowfakery recipe editor](proofs-of-concept/SnowmakeryEditor) created during the fall 2020 virtual sprint. This was the second tool named Snowmakery and largely confirmed that this project's UI will bare that name.
+- *Test Environments*: this project supports working in sandbox, scratch orgs, or dev orgs.  Certain use cases for production orgs are valid, but should be attempted with caution and care!
+- *Data Set*: a collection of related records that include multiple objects and fields.
+- *Valid test data*: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
 
 ### Project Meetings
 
@@ -106,14 +75,24 @@ To help people identify with specific audiences while creating documentation we 
 
 Help us give you the thanks you deserve and ensure future contributors know who to contact if they have questions! Please ensure that all contributing members of the team are included.
 
-- Team Leader(s):
-  - Aaron Crosman (Attain)
+Team Leader(s):
+  - Aaron Crosman (Coastal Cloud)
+  - Eilleen Kapp
+  - Allison Letts (Attain Partners)
+  - Jung Mun
   - Samantha Shain (William Penn Foundation)
   - Cassie Supilowski (OneGoal)
-- Salesforce Liaison:
-  - Paul Prescod (Salesforce.org)
 
 We also keep a [complete list of contributors](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Project-Contributors).  Please add yourself to the list!
+
+### Proof of Concept Code:
+
+During the course of this project some ideas have been tested in code, and to ensure that code isn't lost and doesn't confuse other efforts in this repo they are kept in the proofs-of-concept directory.
+
+Currently those include:
+
+1. [A CumulusCI Task](proofs-of-concept/OriginalCciTask) created during this project's first sprint to generate permutations of data.
+1. [A web-based Snowfakery recipe editor](proofs-of-concept/SnowmakeryEditor) created during the fall 2020 virtual sprint. This was the second tool named Snowmakery and largely confirmed that this project's UI will bare that name.
 
 ### Past Project Accomplishments
 
