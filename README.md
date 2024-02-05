@@ -26,19 +26,21 @@ Our largest project is our collection of Snowfakery recipes meant to be used for
 
 We have generated several guides to help support admins and others use need to seed sandboxes or use Snowfakery for other projects.
 
-* Meet Alex
+You can see all the guides on our [guide index](https://sfdo-community-sprints.github.io/DataGenerationToolkit/).
+
+* [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide.html)
 * Snowfakery Best Practices (Planned)
 * Snowfakery cheat sheet (planned)
-* Using Recipes
-* Contributing Recipes
+* Using Recipes (planned)
+* [Contributing Recipes](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates/tree/main)
 
 ### Education Fakery Provider
 
-A Python-based Faker project to create higher education fake data. Included in Snowfakery since 3.6. Also available as a Python extension that can be used with the main Faker library.
+A [Python-based Faker project](https://pypi.org/project/faker-edu/) to create higher education fake data. Included in Snowfakery since 3.6. Also available as a Python extension that can be used with the main Faker library.  [Code for this library is found on Github.](https://github.com/SFDO-Community-Sprints/Snowfakery-Edu)
 
 ### Nonprofit Fakery Provider
 
-A Python-based Faker project to create nonprofit-related fake data. Included in Snowfakery since 3.6. Also available as a Python extension that can be used with the main Faker library.
+A [Python-based Faker project to create nonprofit-related fake data](https://pypi.org/project/faker-nonprofit/). Included in Snowfakery since 3.6. Also available as a Python extension that can be used with the main Faker library. [Code for this library is found on Github.](https://github.com/SFDO-Community-Sprints/Snowfakery-nonprofit)
 
 ## General Project Vision/Goals
 
