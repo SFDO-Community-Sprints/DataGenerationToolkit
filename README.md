@@ -87,8 +87,7 @@ Team Leader(s):
 
 We also keep a [complete list of contributors](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki/Project-Contributors).  Please add yourself to the list!
 
-
-## Additional Useful References
+## Project References
 
 - [Project Meeting Notes](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 - [Snowfakery](https://github.com/SFDO-Tooling/Snowfakery)
