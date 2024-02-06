@@ -2,17 +2,15 @@
 
 <img src="https://raw.githubusercontent.com/SFDO-Community-Sprints/DataGenerationToolkit/master/Assets/DataGenerationLogoFinal051320.png" width="300" alt="Data Generation Toolkit Logo featuring Astro in a rain of data" style="float:right" >
 
-> This project aims to create toolkit of tools and documentation for generating test data sets based on admin-selected criteria.
+> This project aims to document a toolkit of tools for generating test data sets based on admin-selected criteria.
 
 > This project a proud part of Salesforce.org Open Source Commons initiative.
 
-**[Read our guide on getting data into your Salesforce Sandbox!](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide)**
-
 ### Problem
-Salesforce Admins, Developers, and Consultants need to populate test environments with valid data.  The existing methods for completing this task are costly, inefficient, or inaccessible.  Utilizing workaround solutions - or worse, making demos/changes in Production - are disruptive and potentially hazardous.
+Salesforce Admins, Developers, and Consultants need to populate test environments with [valid data](#working-shared-definitions).  The existing methods for completing this task can be costly, inefficient, or inaccessible.  Utilizing workaround solutions - or worse, making demos/changes in Production - are disruptive and potentially hazardous.
 
 ### Solution
-We propose a combination of tooling, documentation, and advocacy efforts that offer technical and recommended best practices the problem described above.  By developing tools like Snowfakery, as well as documenting existing tools and methods, we empower Admins, Developers, and Consultants to populate Salesforce environments with valid data sets.
+We offer a combination of tooling, documentation, and advocacy efforts that offer technical and recommended best practices to solve the problem described above.  By developing tools like Snowfakery, as well as documenting other tools and methods, we empower Admins, Developers, and Consultants to populate Salesforce environments with [valid data](#working-shared-definitions) sets.
 
 ## Sub-Projects
 
@@ -20,7 +18,7 @@ The Data Generation Toolkit Project consists of several sub-projects, each focus
 
 ### Snowfakery Recipes
 
-Our largest project is our collection of Snowfakery recipes meant to be used for learning and extensions. There are recipes for Salesforce Core, NPSP, EDA, and several open source commons projects.
+Our largest project is our collection of Snowfakery recipes meant to be used for learning and extensions. There are recipes to generate test data for Salesforce Core, NPSP, EDA, and several open source commons projects.
 
 ### Guides
 
@@ -28,11 +26,12 @@ We have generated several guides to help support admins and others use need to s
 
 You can see all the guides on our [guide index](https://sfdo-community-sprints.github.io/DataGenerationToolkit/).
 
-* [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide.html)
-* Snowfakery Best Practices (Planned)
+* [Meet Alex](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide.html) (Alex's user story)
+* [Guide to getting data into your Salesforce Sandbox!](https://sfdo-community-sprints.github.io/DataGenerationToolkit/DataGenGuide)* Snowfakery Best Practices (Planned)
 * Snowfakery cheat sheet (planned)
 * Using Recipes (planned)
 * [Contributing Recipes](https://github.com/SFDO-Community-Sprints/Snowfakery-Recipe-Templates/tree/main)
+
 
 ### Education Fakery Provider
 
@@ -44,26 +43,26 @@ A [Python-based Faker project to create nonprofit-related fake data](https://pyp
 
 ## General Project Vision/Goals
 
-- Every Admin, Developer, and Consultant has access to test environments populated with valid data
-- Ability to generate data sets that follow a story
-- Ability to generate data sets that are valid for small, medium, and large data volumes (including LDV) for testing purposes
-- Ability to generate data sets that are fake but realistic-seeming
 - Open source and free tools facilitate not only data generation, but also sharing best practices *about* data generation between orgs
 - High quality documentation guides users to the appropriate method for their data generation goals and how to execute that method
-- Support for declarative and developer focused solutions
 
-We keep our most recent full notes from meetings and Sprints in the [project wiki](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
+Every Admin, Developer, and Consultant has: 
+- ability to generate data sets that are fake but realistic-seeming
+- ability to generate data sets that follow a story
+- ability to generate data sets that are valid for small, medium, and large data volumes (including LDV) for testing purposes
+- access to test environments populated with valid data
+- support for declarative and developer focused solutions
 
 
 ### Working Shared Definitions
 
 - *Test Environments*: this project supports working in sandbox, scratch orgs, or dev orgs.  Certain use cases for production orgs are valid, but should be attempted with caution and care!
 - *Data Set*: a collection of related records that include multiple objects and fields.
-- *Valid test data*: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records etc.
+- *Valid test data*: the resulting data set produced through these methods should meet user-defined critiera, including matching org schema, volume of records, support for record types, custom fields, records related to other records, etc.
 
 ### Project Meetings
 
-The main project team meets monthly to maintain momentum between sprints. You can contact us through the [Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHjVSAU) to get details for joining those meetings. Notes from project meetings are recorded on the [wiki for this repository](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
+The main project team meets monthly to maintain momentum between sprints. You can contact us through the [Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHjVSAU) to get details for joining those meetings. Notes from project meetings and Sprints are recorded on the [wiki for this repository](https://github.com/SFDO-Community-Sprints/DataGenerationToolkit/wiki).
 
 ### Project Audience
 
