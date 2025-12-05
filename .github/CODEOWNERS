@@ -1,6 +1,14 @@
 # Python
-*.py                  @SalesforceFoundation/release-engineering-reviewers
+*.py                  @SFDO-Community-Sprints/salesforce-org-release-engineering 
 
 # CumulusCI
-/cumulusci.yml        @SalesforceFoundation/release-engineering-reviewers
-/tasks/               @SalesforceFoundation/release-engineering-reviewers
+/cumulusci.yml        @SFDO-Community-Sprints/salesforce-org-release-engineering
+/tasks/               @SFDO-Community-Sprints/salesforce-org-release-engineering
+
+# Actions
+/.github                @SFDO-Community-Sprints/salesforce-org-release-engineering
+/scripts                @SFDO-Community-Sprints/salesforce-org-release-engineering
+
+
+#ECCN:Open Source
+#GUSINFO:Open Source,Open Source Workflow
